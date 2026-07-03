@@ -1,0 +1,173 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  min-height: var(--header-height);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-neutral);
+  display: flex;
+  align-items: center;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-decoration: none;
+}
+
+.navbar__logo-mark {
+  height: 30px;
+  width: auto;
+}
+
+.navbar__logo-sub {
+  font-family: var(--font-nav);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--navy);
+  padding-left: 0.32em;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.navbar__phone {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 18px 7px 7px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-card);
+  font-family: var(--font-nav);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.navbar__phone-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.navbar__cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 20px 7px 44px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: var(--navy);
+  color: var(--white);
+  font-family: var(--font-nav);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.navbar__cta:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 22px rgba(10, 42, 102, 0.32);
+}
+
+.navbar__cta:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.navbar__cta-badge {
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: left 0.45s ease;
+}
+
+.navbar__cta:hover .navbar__cta-badge,
+.navbar__cta:active .navbar__cta-badge {
+  left: calc(100% - 37px);
+}
+
+.navbar__cta-icon {
+  display: block;
+  transform: rotate(35deg);
+  transition: transform 0.3s ease;
+}
+
+.navbar__cta:hover .navbar__cta-icon {
+  transform: rotate(45deg) translate(1px, -1px);
+}
+
+/* Click "launch": the plane badge flies from the left edge, all the way
+   across and off the right edge of the button, then the popup opens. */
+.navbar__cta--launching .navbar__cta-badge {
+  left: 7px;
+  animation: navbarPlaneLaunch 0.42s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+@keyframes navbarPlaneLaunch {
+  0% {
+    left: 7px;
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(100% - 6px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar__logo-mark {
+    height: 26px;
+  }
+  .navbar__phone {
+    display: none;
+  }
+  /* Mobile "Apply Now" is text-only (per Figma mobile) */
+  .navbar__cta {
+    font-size: 15px;
+    padding: 10px 22px;
+  }
+  .navbar__cta-badge {
+    display: none;
+  }
+}

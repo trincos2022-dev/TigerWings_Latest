@@ -1,0 +1,71 @@
+.admissions {
+  background-size: cover;
+  background-position: center top;
+  min-height: clamp(460px, 52vw, 640px);
+  padding: 110px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.admissions__inner {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.admissions__label {
+  font-family: var(--font-nav);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-tint);
+}
+
+.admissions__badge {
+  background: rgba(229, 57, 53, 0.2);
+  color: #ff8a80;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+}
+
+.admissions__heading {
+  font-family: var(--font-accent);
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.admissions__text {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.admissions__actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media (max-width: 700px) {
+  .admissions {
+    padding: 70px 0;
+    min-height: 420px;
+  }
+  .admissions__heading {
+    font-size: 30px;
+  }
+  .admissions__text {
+    font-size: 14px;
+  }
+}

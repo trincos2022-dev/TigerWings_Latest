@@ -1,0 +1,141 @@
+.footer {
+  background: var(--navy-darkest);
+  padding: 56px 0 28px;
+  color: var(--white);
+}
+
+.footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.footer__logo {
+  height: 88px;
+  width: auto;
+  filter: brightness(1.4);
+}
+
+.footer__contact {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px 32px;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer__contact-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.footer__contact-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.footer__contact-text a,
+.footer__contact-text span:not(.footer__contact-label) {
+  color: var(--white);
+  text-decoration: none;
+  max-width: 260px;
+  line-height: 1.5;
+}
+
+.footer__contact-label {
+  font-family: var(--font-nav);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-tint);
+}
+
+.footer__contact-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.footer__divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  margin: 40px 0 24px;
+}
+
+.footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.footer__social {
+  display: flex;
+  gap: 14px;
+}
+
+.footer__social a {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.footer__legal {
+  display: flex;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-legal);
+}
+
+.footer__legal a {
+  color: var(--text-legal);
+  text-decoration: none;
+}
+
+.footer__copyright {
+  font-size: 13px;
+  color: var(--text-legal);
+}
+
+@media (max-width: 700px) {
+  .footer__top {
+    flex-direction: column;
+  }
+  .footer__contact {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+  .footer__contact-divider {
+    display: none;
+  }
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Manrope:wght@400;600;700&family=Montserrat:wght@500;600;700&display=swap');
+
+:root {
+  /* Brand colors */
+  --navy: #0a2a66;
+  --navy-deep: #081b5b;
+  --navy-darkest: #0f1b52;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* Accent colors */
+  --gold: #ffc107;
+  --gold-dark: #ffb300;
+  --blue-accent: #2f80ed;
+  --red-accent: #e53935;
+  --green: #0a9940;
+  --green-light: #20b038;
+  --green-lighter: #60d66a;
+  --green-icon: #16a34a;
+
+  /* Text colors */
+  --text-body: #45556c;
+  --text-muted: #62748e;
+  --text-faint: #6b7280;
+  --text-legal: #abb4dc;
+  --text-tint: #ccd8ff;
+
+  /* Surfaces + borders */
+  --bg-section: #f8fafc;
+  --bg-faq: #f6f6f6;
+  --border-card: #e2e8f0;
+  --border-light: #f1f5f9;
+  --border-neutral: #ddd;
+
+  /* Gradients */
+  --gradient-blue-navy: linear-gradient(135deg, var(--blue-accent) 0%, var(--navy) 100%);
+  --gradient-red-navy: linear-gradient(145deg, var(--red-accent) 0%, var(--navy) 100%);
+  --gradient-green-navy: linear-gradient(145deg, var(--green-icon) 0%, var(--navy) 100%);
+  --gradient-gold: linear-gradient(160deg, var(--gold) 8%, var(--gold-dark) 92%);
+  --gradient-whatsapp: linear-gradient(to top, var(--green-light), var(--green-lighter));
+
+  /* Typography */
+  --font-primary: 'Inter', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-accent: 'Manrope', system-ui, sans-serif;
+  --font-nav: 'Poppins', system-ui, sans-serif;
+
+  /* Layout */
+  --container-max: 1280px;
+  --section-padding-y: 80px;
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --shadow-card: 0 20px 40px -12px rgba(10, 42, 102, 0.15);
+  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.1);
+
+  --header-height: 80px;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --section-padding-y: 56px;
+    --header-height: 68px;
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --section-padding-y: 50px;
+  }
+}

@@ -1,0 +1,66 @@
+.salary__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.salary-card {
+  border-radius: var(--radius-card);
+  padding: 22px 22px 24px;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-height: 150px;
+  box-shadow: var(--shadow-card);
+}
+
+.salary-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.salary-card__title {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.92;
+  order: 1;
+}
+
+.salary-card__range {
+  font-size: 26px;
+  font-weight: 700;
+  order: 2;
+  margin-top: 6px;
+}
+
+.salary-card__unit {
+  font-size: 12px;
+  opacity: 0.75;
+  order: 3;
+}
+
+@media (max-width: 900px) {
+  .salary__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .salary__grid {
+    grid-template-columns: 1fr;
+  }
+  .salary-card {
+    min-height: unset;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .salary-card__range {
+    margin-top: 0;
+    margin-left: auto;
+  }
+}

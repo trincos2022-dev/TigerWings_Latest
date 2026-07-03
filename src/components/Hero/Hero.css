@@ -1,0 +1,298 @@
+.hero {
+  position: relative;
+  background: linear-gradient(120deg, #0f3a8a 0%, var(--navy) 55%, var(--navy-darkest) 100%);
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: 62% center;
+  background-repeat: no-repeat;
+  opacity: 0.78;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(10, 42, 102, 0.92) 25%, rgba(10, 42, 102, 0.35) 70%, rgba(8, 27, 91, 0.7) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+  padding-top: 48px;
+  padding-bottom: 70px;
+  min-height: 500px;
+  max-width: 1600px;
+}
+
+/* Transparent wrapper on desktop (content + people lay out directly in the flex row);
+   becomes a positioning context for the absolute pilots on mobile. */
+.hero__main {
+  display: contents;
+}
+
+/* ---- Left: text content ---- */
+.hero__content {
+  flex: 0 1 480px;
+  max-width: 480px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 22px;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--gold);
+  font-family: var(--font-nav);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hero__badge-emoji {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.hero__heading {
+  font-size: 60px;
+  line-height: 1.1;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+
+.hero__heading-highlight {
+  color: var(--gold);
+}
+
+.hero__subheading {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 520px;
+}
+
+.hero__features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 14px 32px;
+}
+
+.hero__features li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+/* "Call Now" is a mobile-only CTA (desktop Figma shows WhatsApp only) */
+.hero__call {
+  display: none;
+}
+
+/* ---- Center: student cutouts ---- */
+.hero__people {
+  flex: 0 0 auto;
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end; 
+  pointer-events: none;
+  margin-right: -30px;
+}
+
+.hero__person {
+  height: 660px;
+  width: auto;
+  object-fit: contain;
+  object-position: bottom;
+  filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
+}
+
+.hero__person--woman {
+  transform: translateY(120px);
+  z-index: 1;
+}
+
+.hero__person--man {
+  z-index: 2;
+  transform: translateY(135px);
+  margin-left: -230px;
+}
+
+/* ---- Right: enquiry form ---- */
+.hero__form {
+  flex: 0 0 390px;
+  align-self: center;
+  padding-bottom: 20px;
+  margin-left: auto;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 1200px) {
+  .hero__heading {
+    font-size: 52px;
+  }
+
+  .hero__person {
+    height: 500px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero__inner {
+    flex-wrap: wrap;
+    min-height: 0;
+  }
+
+  .hero__content {
+    flex: 1 1 55%;
+    order: 1;
+  }
+
+  .hero__form {
+    flex: 0 0 340px;
+    order: 2;
+  }
+
+  .hero__people {
+    order: 3;
+    flex: 1 1 100%;
+    align-self: center;
+  }
+
+  .hero__person {
+    height: 400px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding-bottom: 70px;
+  }
+
+  .hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 32px;
+    padding-bottom: 0;
+    gap: 28px;
+    min-height: 0;
+  }
+
+  /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
+  .hero__main {
+    display: block;
+    position: relative;
+    order: 1;
+  }
+
+  .hero__content {
+    align-items: flex-start;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__heading {
+    font-size: 36px;
+    line-height: 1.15;
+  }
+
+  .hero__subheading {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .hero__features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 62%;
+  }
+
+  /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
+  .hero__people {
+    position: absolute;
+    right: -14px;
+    bottom: 0;
+    z-index: 1;
+    width: auto;
+    align-items: flex-end;
+    pointer-events: none;
+    margin-right: 0;
+  }
+
+  .hero__person {
+    height: 258px;
+  }
+
+  .hero__person--woman {
+    transform: none;
+  }
+
+  .hero__person--man {
+    margin-left: -86px;
+  }
+
+  /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
+  .hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__whatsapp,
+  .hero__call {
+    flex: 0 0 auto;
+  }
+
+  .hero__call {
+    display: inline-flex;
+  }
+
+  .hero__form {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero__heading {
+    font-size: 30px;
+  }
+
+  .hero__person {
+    height: 240px;
+  }
+}
