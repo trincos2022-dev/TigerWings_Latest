@@ -7,6 +7,7 @@
     var(--navy-darkest) 100%
   );
   padding-bottom: 0px;
+  margin-top: -100px;
   overflow: visible;
   height: 770px;
 }
@@ -47,7 +48,7 @@
   margin: 0 auto;
 
   min-height: clamp(500px, 44vw, 700px);
-  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 70px) 0;
+  padding: 50px;
   box-sizing: border-box;
 }
 
@@ -193,6 +194,9 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 1200px) {
+  .hero {
+    padding-top: 100px;
+  }
   .hero__inner {
     min-height: clamp(460px, 52vw, 640px);
   }
@@ -208,7 +212,8 @@
 
 @media (max-width: 1024px) {
   .hero{
-    height: 1050px;
+    padding-top: 50px;
+    height: 1200px;
   }
   .hero__inner {
     flex-direction: column;
@@ -255,7 +260,7 @@
     align-self: center;
     padding-bottom: 0;
     padding-left: 40px;
-    margin-top: 55px;
+    margin-top: 75px;
     margin-bottom: 22px;
   }
 
@@ -272,15 +277,15 @@
   }
 
   .hero__person {
-    height: clamp(260px, 40vw, 380px);
+    height: 350px;
   }
 
   .hero__person--woman {
-    transform: translateX(-12px) translateY(74px);
+    transform: translateX(-12px) translateY(50px);
   }
 
   .hero__person--man {
-    transform: translateX(0) translateY(74px);
+    transform: translateX(0) translateY(50px);
     margin-left: -110px;
   }
 }
@@ -289,7 +294,137 @@
   .hero {
     padding-top: -50px;
     padding-bottom: 52px;
-    height: 1150px;
+    height: 1250px;
+  }
+
+
+  .hero__inner {
+    flex-direction: column;
+    align-items: stretch;
+    padding-top: 24px;
+    padding-bottom: 0;
+    padding-left: 20px;
+    gap: 24px;
+    min-height: 0;
+    width: 100%;
+  }
+
+  /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
+  .hero__main {
+    display: block;
+    position: relative;
+    order: 1;
+  }
+
+  .hero__content {
+    align-items: flex-start;
+    padding-bottom: 0;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .hero__badge {
+    min-width: 350px;
+    max-width: 100%;
+  }
+
+  .hero__heading {
+    font-size: 40px;
+    line-height: 1.15;
+    min-width: 350px;
+    max-width: 100%;
+  }
+
+  .hero__subheading {
+    font-size: 14px;
+    min-width: 350px;
+    max-width: 100%;
+    padding-right: 10px;
+  }
+
+  .hero__features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
+  .hero__people {
+    position: absolute;
+    right: -30px;
+    bottom: -2px;
+    z-index: 1;
+    width: min(40vw, 280px);
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+    margin-right: 0;
+  }
+
+  .hero__person {
+    height: 300px;
+  }
+
+  .hero__person--woman {
+    transform: none;
+  }
+
+  .hero__person--man {
+    margin-left: -74px;
+    transform: none;
+  }
+
+  /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
+  .hero__ctas {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero__whatsapp,
+  .hero__call {
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .hero__whatsapp {
+    width: min(100%, 220px);
+    border-radius: 21px;
+  }
+
+  .hero__call {
+    display: inline-flex;
+  }
+
+  .hero__form {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 55px;
+    padding-bottom: 30px;
+    padding-left: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero {
+    padding-top: 50px;
+    min-width: 400px;
+  }
+
+  .hero__heading {
+    font-size: 30px;
+  }
+
+  .hero__person {
+    height: 350px;
   }
 
 
@@ -404,19 +539,5 @@
     margin: 0 auto;
     padding-bottom: 30px;
     padding-left: 0px;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero {
-    padding-top: 0px;
-  }
-
-  .hero__heading {
-    font-size: 30px;
-  }
-
-  .hero__person {
-    height: 350px;
   }
 }
