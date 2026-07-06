@@ -235,6 +235,7 @@
     padding-top: 70px;
     padding-left: 20px;
     padding-right: min(24vw, 180px);
+    gap: 40px;
   }
 
   .hero__badge {
@@ -254,14 +255,17 @@
   .hero__form {
     flex: 0 0 auto;
     order: 2;
-    max-width: 560px;
-    width: min(100%, 560px);
+    max-width: 640px;
+    width: min(100%, 640px);
     margin: 0 auto;
     align-self: center;
     padding-bottom: 0;
-    padding-left: 40px;
     margin-top: 75px;
     margin-bottom: 22px;
+  }
+
+  .hero__form .demo-form {
+    max-width: 100%;
   }
 
   .hero__people {
@@ -277,16 +281,16 @@
   }
 
   .hero__person {
-    height: 350px;
+    height: 400px;
   }
 
   .hero__person--woman {
-    transform: translateX(-12px) translateY(50px);
+    transform: translateX(122px) translateY(40px);
   }
 
   .hero__person--man {
-    transform: translateX(0) translateY(50px);
-    margin-left: -110px;
+    transform: translateX(0) translateY(40px);
+    margin-left: 0;
   }
 }
 
@@ -375,6 +379,15 @@
     transform: none;
   }
 
+  .hero__person--woman {
+    transform: translateX(122px) translateY(40px);
+  }
+
+  .hero__person--man {
+    transform: translateX(30px) translateY(40px);
+    margin-left: 0;
+  }
+
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
   .hero__ctas {
     flex-direction: column;
@@ -414,29 +427,24 @@
 }
 
 @media (max-width: 400px) {
+  .hero__bg{
+    min-width: 350px;
+  }
   .hero {
     padding-top: 50px;
-    min-width: 400px;
+    min-width: 350px;
+    height: 1400px;
   }
-
-  .hero__heading {
-    font-size: 30px;
-  }
-
-  .hero__person {
-    height: 350px;
-  }
-
 
   .hero__inner {
     flex-direction: column;
     align-items: stretch;
     padding-top: 24px;
     padding-bottom: 0;
-    padding-left: 20px;
+    padding-left: 10px;
     gap: 24px;
     min-height: 0;
-    width: 100%;
+    max-width: 100%;
   }
 
   /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
@@ -444,6 +452,7 @@
     display: block;
     position: relative;
     order: 1;
+    max-width: 320px;
   }
 
   .hero__content {
@@ -455,20 +464,20 @@
   }
 
   .hero__badge {
-    min-width: 350px;
+    min-width: 320px;
     max-width: 100%;
   }
 
   .hero__heading {
     font-size: 40px;
     line-height: 1.15;
-    min-width: 350px;
+    min-width: 320px;
     max-width: 100%;
   }
 
   .hero__subheading {
     font-size: 14px;
-    min-width: 350px;
+    min-width: 320px;
     max-width: 100%;
     padding-right: 10px;
   }
@@ -505,6 +514,15 @@
     transform: none;
   }
 
+  .hero__person--woman {
+    transform: translateX(122px) translateY(-40px);
+  }
+
+  .hero__person--man {
+    transform: translateX(30px) translateY(-40px);
+    margin-left: 0;
+  }
+
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
   .hero__ctas {
     flex-direction: column;
@@ -534,10 +552,10 @@
     order: 2;
     flex: 1 1 auto;
     align-self: stretch;
-    min-width: 0;
+    min-width: 320px;
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 30px;
-    padding-left: 0px;
+    padding-left: 10px;
   }
 }
