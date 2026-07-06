@@ -109,7 +109,7 @@
 
 @media (max-width: 900px) {
   .courses{
-    margin-top: 150px;
+    margin-top: 250px;
   }
   .courses__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -118,7 +118,7 @@
 
 @media (max-width: 700px) {
   .courses{
-    margin-top: 150px;
+    margin-top: 225px;
   }
   .courses__grid {
     grid-template-columns: repeat(2, 1fr);
@@ -126,6 +126,15 @@
   .course-card__title {
     font-size: 16px;
     min-height: unset;
+  }
+}
+
+@media (max-width: 600px) {
+  .courses{
+    margin-top: 275px;
+  }
+  .courses__grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
