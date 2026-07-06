@@ -43,31 +43,20 @@ function Footer() {
 
         <div className="footer__divider" />
 
-
         <div className="footer__bottom">
-
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '32px', flexWrap: 'wrap' }}>
-
-            <div className="footer__social">
-              <a href="#" aria-label="Instagram"><InstagramIcon size={18} /></a>
-              <a href="#" aria-label="LinkedIn"><LinkedInIcon size={18} /></a>
-              <a href="#" aria-label="Facebook"><FacebookIcon size={18} /></a>
-            </div>
-
-            <div className="footer__legal">
-              <a href="#">Privacy Policy</a>
-              <span>|</span>
-              <a href="#">Cookies</a>
-              <span>|</span>
-              <a href="#">Terms of use</a>
-            </div>
-
+          <div className="footer__social">
+            <a href="#" aria-label="Instagram"><InstagramIcon size={18} /></a>
+            <a href="#" aria-label="LinkedIn"><LinkedInIcon size={18} /></a>
+            <a href="#" aria-label="Facebook"><FacebookIcon size={18} /></a>
           </div>
-
-
+          <div className="footer__legal">
+            <a href="#">Privacy Policy</a>
+            <span>|</span>
+            <a href="#">Cookies</a>
+            <span>|</span>
+            <a href="#">Terms of use</a>
+          </div>
           <span className="footer__copyright">&copy; 2026 Tiger Wings Aviation.</span>
-
         </div>
       </div>
     </footer>

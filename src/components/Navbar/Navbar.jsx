@@ -21,8 +21,7 @@ function Navbar() {
 
   return (
     <header className="navbar">
-      {/* ✅ 'container' class-ah thookitu verum navbar__inner wrapper mattum potturuken */}
-      <div className="navbar__inner">
+      <div className="container navbar__inner">
         <a href="#top" className="navbar__logo" aria-label="Tigers Wings Aviation Academy">
           <img src={logoMark} alt="Tigers Wings" className="navbar__logo-mark" />
           <span className="navbar__logo-sub">Aviation Academy</span>
