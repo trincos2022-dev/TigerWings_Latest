@@ -1,6 +1,6 @@
 .footer {
   background: var(--navy-darkest);
-  padding: 56px 0 28px;
+  padding: 56px 48px 28px;
   color: var(--white);
 }
 
@@ -10,6 +10,9 @@
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
 }
 
 .footer__logo {
@@ -87,7 +90,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1440px;
+  max-width: 1280px;
+  /* 1440px லிருந்து header-க்கு மேட்ச் ஆக 1280px என மாற்றப்பட்டுள்ளது */
   width: 100%;
   margin: 0 auto;
 }
