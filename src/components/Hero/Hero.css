@@ -1,8 +1,14 @@
 .hero {
   position: relative;
-  background: linear-gradient(120deg, #0f3a8a 0%, var(--navy) 55%, var(--navy-darkest) 100%);
-  padding-bottom: 0;
-  overflow: hidden;
+  background: linear-gradient(
+    120deg,
+    #0f3a8a 0%,
+    var(--navy) 55%,
+    var(--navy-darkest) 100%
+  );
+  padding-bottom: 0px;
+  overflow: visible;
+  height: 770px;
 }
 
 .hero__bg {
@@ -13,14 +19,19 @@
   background-repeat: no-repeat;
   opacity: 0.78;
   z-index: 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(90deg, rgba(10, 42, 102, 0.92) 25%, rgba(10, 42, 102, 0.35) 70%, rgba(8, 27, 91, 0.7) 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(10, 42, 102, 0.92) 25%,
+    rgba(10, 42, 102, 0.35) 70%,
+    rgba(8, 27, 91, 0.7) 100%
+  );
   z-index: 0;
   pointer-events: none;
 }
@@ -30,11 +41,14 @@
   z-index: 2;
   display: flex;
   align-items: stretch;
-  gap: 24px;
-  padding-top: 48px;
-  padding-bottom: 70px;
-  min-height: 500px;
-  max-width: 1600px;
+  gap: clamp(18px, 2vw, 24px);
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+
+  min-height: clamp(500px, 44vw, 700px);
+  padding: clamp(28px, 4vw, 48px) clamp(20px, 4vw, 70px) 0;
+  box-sizing: border-box;
 }
 
 /* Transparent wrapper on desktop (content + people lay out directly in the flex row);
@@ -44,14 +58,27 @@
 }
 
 /* ---- Left: text content ---- */
-.hero__content {
-  flex: 0 1 480px;
-  max-width: 480px;
-  min-width: 260px;
+/* .hero__content {
+  flex: 0 1 520px;
+  max-width: 520px;
+  min-width: 520px; 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  gap: 22px;
+} */
+
+.hero__content {
+  flex: 0 1 clamp(340px, 42vw, 750px);
+  width: 100%;
+  max-width: 1250px;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   gap: 22px;
 }
 
@@ -63,6 +90,7 @@
   font-family: var(--font-nav);
   font-size: 14px;
   font-weight: 600;
+  max-width: 520px;
 }
 
 .hero__badge-emoji {
@@ -71,11 +99,12 @@
 }
 
 .hero__heading {
-  font-size: 60px;
+  font-size: clamp(42px, 4.8vw, 60px);
   line-height: 1.1;
   font-weight: 700;
   color: var(--white);
   letter-spacing: -0.01em;
+  max-width: 1150px;
 }
 
 .hero__heading-highlight {
@@ -86,7 +115,7 @@
   font-size: 17px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
-  max-width: 520px;
+  max-width: 560px;
 }
 
 .hero__features {
@@ -121,16 +150,17 @@
 
 /* ---- Center: student cutouts ---- */
 .hero__people {
-  flex: 0 0 auto;
+  flex: 0 0 clamp(280px, 24vw, 430px);
+  width: clamp(280px, 24vw, 430px);
   align-self: flex-end;
   display: flex;
-  align-items: flex-end; 
+  align-items: flex-end;
   pointer-events: none;
-  margin-right: -30px;
+  margin-right: 0;
 }
 
 .hero__person {
-  height: 660px;
+  height: clamp(480px, 54vw, 660px);
   width: auto;
   object-fit: contain;
   object-position: bottom;
@@ -138,19 +168,24 @@
 }
 
 .hero__person--woman {
-  transform: translateY(120px);
+  transform: translateX(clamp(-120px, -10vw, -40px))
+    translateY(clamp(86px, 8vw, 122px));
   z-index: 1;
 }
 
 .hero__person--man {
   z-index: 2;
-  transform: translateY(135px);
-  margin-left: -230px;
+  transform: translateX(clamp(-120px, -10vw, -24px))
+    translateY(clamp(96px, 8.5vw, 136px));
+  margin-left: clamp(-230px, -14vw, -150px);
 }
 
 /* ---- Right: enquiry form ---- */
 .hero__form {
-  flex: 0 0 390px;
+  flex: 0 1 clamp(360px, 32vw, 470px);
+  width: 100%;
+  max-width: 470px;
+  min-width: 0;
   align-self: center;
   padding-bottom: 20px;
   margin-left: auto;
@@ -158,54 +193,115 @@
 
 /* ---- Responsive ---- */
 @media (max-width: 1200px) {
+  .hero__inner {
+    min-height: clamp(460px, 52vw, 640px);
+  }
+
   .hero__heading {
-    font-size: 52px;
+    font-size: clamp(38px, 4.3vw, 52px);
   }
 
   .hero__person {
-    height: 500px;
+    height: clamp(380px, 42vw, 520px);
   }
 }
 
 @media (max-width: 1024px) {
+  .hero{
+    height: 1050px;
+  }
   .hero__inner {
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: stretch;
     min-height: 0;
+    gap: 22px;
+  }
+
+  .hero__main {
+    display: block;
+    position: relative;
+    order: 1;
+    min-height: clamp(380px, 56vw, 520px);
   }
 
   .hero__content {
-    flex: 1 1 55%;
-    order: 1;
+    flex: 1 1 auto;
+    max-width: none;
+    padding-top: 70px;
+    padding-left: 20px;
+    padding-right: min(24vw, 180px);
+  }
+
+  .hero__badge {
+    min-width: 550px;
+  }
+
+  .hero__heading {
+    min-width: 700px;
+  }
+
+  .hero__features {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    max-width: 100%;
   }
 
   .hero__form {
-    flex: 0 0 340px;
+    flex: 0 0 auto;
     order: 2;
+    max-width: 560px;
+    width: min(100%, 560px);
+    margin: 0 auto;
+    align-self: center;
+    padding-bottom: 0;
+    padding-left: 40px;
+    margin-top: 55px;
+    margin-bottom: 22px;
   }
 
   .hero__people {
+    position: absolute;
+    right: 0;
+    top: clamp(120px, 18vw, 180px);
+    bottom: auto;
     order: 3;
-    flex: 1 1 100%;
-    align-self: center;
+    flex: none;
+    width: min(34vw, 300px);
+    justify-content: flex-end;
+    align-self: flex-end;
   }
 
   .hero__person {
-    height: 400px;
+    height: clamp(260px, 40vw, 380px);
+  }
+
+  .hero__person--woman {
+    transform: translateX(-12px) translateY(74px);
+  }
+
+  .hero__person--man {
+    transform: translateX(0) translateY(74px);
+    margin-left: -110px;
   }
 }
 
 @media (max-width: 760px) {
   .hero {
-    padding-bottom: 70px;
+    padding-top: -50px;
+    padding-bottom: 52px;
+    height: 1150px;
   }
+
 
   .hero__inner {
     flex-direction: column;
     align-items: stretch;
-    padding-top: 32px;
+    padding-top: 24px;
     padding-bottom: 0;
-    gap: 28px;
+    padding-left: 20px;
+    gap: 24px;
     min-height: 0;
+    width: 100%;
   }
 
   /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
@@ -220,38 +316,49 @@
     padding-bottom: 0;
     position: relative;
     z-index: 2;
+    width: 100%;
+  }
+
+  .hero__badge {
+    min-width: 350px;
+    max-width: 100%;
   }
 
   .hero__heading {
-    font-size: 36px;
+    font-size: 40px;
     line-height: 1.15;
+    min-width: 350px;
+    max-width: 100%;
   }
 
   .hero__subheading {
     font-size: 14px;
+    min-width: 350px;
     max-width: 100%;
+    padding-right: 10px;
   }
 
   .hero__features {
     grid-template-columns: 1fr;
     gap: 12px;
-    max-width: 62%;
+    max-width: 100%;
   }
 
   /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
   .hero__people {
     position: absolute;
-    right: -14px;
-    bottom: 0;
+    right: -30px;
+    bottom: -2px;
     z-index: 1;
-    width: auto;
+    width: min(40vw, 280px);
     align-items: flex-end;
+    justify-content: flex-end;
     pointer-events: none;
     margin-right: 0;
   }
 
   .hero__person {
-    height: 258px;
+    height: clamp(210px, 17vw, 210px);
   }
 
   .hero__person--woman {
@@ -259,14 +366,16 @@
   }
 
   .hero__person--man {
-    margin-left: -86px;
+    margin-left: -74px;
+    transform: none;
   }
 
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
   .hero__ctas {
     flex-direction: column;
     align-items: flex-start;
-    width: auto;
+    width: 100%;
+    max-width: 100%;
     position: relative;
     z-index: 2;
   }
@@ -274,6 +383,12 @@
   .hero__whatsapp,
   .hero__call {
     flex: 0 0 auto;
+    max-width: 100%;
+  }
+
+  .hero__whatsapp {
+    width: min(100%, 220px);
+    border-radius: 21px;
   }
 
   .hero__call {
@@ -284,15 +399,24 @@
     order: 2;
     flex: 1 1 auto;
     align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-left: 0px;
   }
 }
 
 @media (max-width: 400px) {
+  .hero {
+    padding-top: 0px;
+  }
+
   .hero__heading {
     font-size: 30px;
   }
 
   .hero__person {
-    height: 240px;
+    height: 350px;
   }
 }

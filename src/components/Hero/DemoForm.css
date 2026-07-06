@@ -4,6 +4,7 @@
   box-shadow: var(--shadow-card);
   padding: 28px;
   width: 100%;
+  max-width: 400px;
 }
 
 .demo-form__title {

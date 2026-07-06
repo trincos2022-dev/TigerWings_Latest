@@ -10,6 +10,7 @@ import './Hero.css';
 function Hero() {
   return (
     <section className="hero" id="top">
+      <div>
       <div className="hero__bg" style={{ backgroundImage: `url(${bgPlane})` }} aria-hidden="true" />
 
       <div className="container hero__inner">
@@ -63,8 +64,11 @@ function Hero() {
         </div>
       </div>
 
+      
+      </div>
       <Stats />
     </section>
+    
   );
 }
 
