@@ -77,7 +77,7 @@
 }
 
 .cta-banner__plane--desktop {
-  top: 15px;          /* Balanced vertical position */
+  top: 15px;         
   right: -60px;       
   width: 590px;        
   max-width: none;
