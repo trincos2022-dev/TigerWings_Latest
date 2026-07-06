@@ -6,7 +6,7 @@
     var(--navy) 55%,
     var(--navy-darkest) 100%
   );
-  padding-bottom: 0px;
+  margin-top: -100px;
   overflow: visible;
   height: 770px;
 }
@@ -208,6 +208,7 @@
 
 @media (max-width: 1024px) {
   .hero{
+    margin-top: 0;
     height: 1050px;
   }
   .hero__inner {
@@ -255,7 +256,7 @@
     align-self: center;
     padding-bottom: 0;
     padding-left: 40px;
-    margin-top: 55px;
+    margin-top: 70px;
     margin-bottom: 22px;
   }
 
@@ -287,9 +288,9 @@
 
 @media (max-width: 760px) {
   .hero {
-    padding-top: -50px;
     padding-bottom: 52px;
     height: 1150px;
+    margin-top: 0;
   }
 
 
@@ -298,7 +299,7 @@
     align-items: stretch;
     padding-top: 24px;
     padding-bottom: 0;
-    padding-left: 20px;
+    padding-left: 0px;
     gap: 24px;
     min-height: 0;
     width: 100%;
@@ -363,6 +364,7 @@
 
   .hero__person--woman {
     transform: none;
+    overflow: hidden;
   }
 
   .hero__person--man {
@@ -387,7 +389,7 @@
   }
 
   .hero__whatsapp {
-    width: min(100%, 220px);
+    width: min(100%, 130px);
     border-radius: 21px;
   }
 
@@ -403,12 +405,13 @@
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 30px;
-    padding-left: 0px;
+    padding-left: 20px;
   }
 }
 
 @media (max-width: 400px) {
   .hero {
+    margin-top: -30px;
     padding-top: 0px;
   }
 
