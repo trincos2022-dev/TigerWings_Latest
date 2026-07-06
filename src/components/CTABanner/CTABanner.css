@@ -65,6 +65,7 @@
    from the top (rather than vertically centered) so the nose stays fully in
    frame, matching the reference crop, instead of being symmetrically clipped
    by the section's shorter height. */
+
 .cta-banner__plane {
   position: absolute;
   z-index: 1;
@@ -76,18 +77,20 @@
 }
 
 .cta-banner__plane--desktop {
-  top: -20px;
-  right: -40px;
-  width: 480px;
+  top: 15px;          /* Balanced vertical position */
+  right: -60px;       
+  width: 590px;        
   max-width: none;
+  transform: scaleX(-1) rotate(-35deg); 
 }
 
 @media (max-width: 1200px) {
   .cta-banner__plane--desktop {
-    top: -10px;
+    top: 10px;        
     right: -60px;
-    width: 400px;
+    width: 480px;
     opacity: 0.95;
+    transform: scaleX(-1) rotate(-35deg); 
   }
 }
 
@@ -113,6 +116,7 @@
     max-width: 420px;
     margin: 32px auto 0;
     display: block;
+    transform: scaleX(-1) rotate(-35deg); 
   }
   .cta-banner__inner {
     text-align: left;

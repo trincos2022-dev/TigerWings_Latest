@@ -103,7 +103,7 @@
   border-radius: 18px;
   padding: 18px 20px;
   box-shadow: var(--shadow-soft);
-  max-width: 470px;
+  width: 100%;
   text-decoration: none;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
