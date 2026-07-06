@@ -2,7 +2,7 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  min-height: var(--header-height);
+  height: 70px;
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border-neutral);
@@ -16,8 +16,10 @@
   justify-content: space-between;
   gap: 16px;
   width: 100%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 13.5px;
+  padding-bottom: 13.5px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 .navbar__logo {
@@ -146,9 +148,11 @@
     left: 7px;
     opacity: 1;
   }
+
   70% {
     opacity: 1;
   }
+
   100% {
     left: calc(100% - 6px);
     opacity: 0;
@@ -159,14 +163,17 @@
   .navbar__logo-mark {
     height: 26px;
   }
+
   .navbar__phone {
     display: none;
   }
+
   /* Mobile "Apply Now" is text-only (per Figma mobile) */
   .navbar__cta {
     font-size: 15px;
     padding: 10px 22px;
   }
+
   .navbar__cta-badge {
     display: none;
   }
