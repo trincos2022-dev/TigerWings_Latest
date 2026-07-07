@@ -404,15 +404,18 @@
   .hero__call {
     flex: 0 0 auto;
     max-width: 100%;
+    
   }
 
   .hero__whatsapp {
-    width: min(100%, 220px);
+    width: min(100%, 200px);
     border-radius: 21px;
   }
 
   .hero__call {
     display: inline-flex;
+    width: min(100%, 200px);
+    border-radius: 21px;
   }
 
   .hero__form {
@@ -529,6 +532,7 @@
     max-width: 100%;
     position: relative;
     z-index: 2;
+    
   }
 
   .hero__whatsapp,
@@ -538,12 +542,13 @@
   }
 
   .hero__whatsapp {
-    width: min(100%, 190px);
-    border-radius: 18px;
+    width: min(100%, 160px);
+    border-radius: 21px;
   }
 
   .hero__call {
-    display: inline-flex;
+     width: min(100%, 160px);
+    border-radius: 21px;
   }
 
   .hero__form {
