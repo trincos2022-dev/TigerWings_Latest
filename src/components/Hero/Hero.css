@@ -428,11 +428,11 @@
 
 @media (max-width: 400px) {
   .hero__bg{
-    min-width: 350px;
+    min-width: 320px;
   }
   .hero {
     padding-top: 50px;
-    min-width: 350px;
+    min-width: 320px;
     height: 1400px;
   }
 
