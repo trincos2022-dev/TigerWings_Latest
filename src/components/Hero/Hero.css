@@ -211,9 +211,10 @@
 }
 
 @media (max-width: 1024px) {
-  .hero{
+  .hero {
     padding-top: 50px;
     height: 1200px;
+    overflow-x: clip;
   }
   .hero__inner {
     flex-direction: column;
@@ -234,16 +235,16 @@
     max-width: none;
     padding-top: 70px;
     padding-left: 20px;
-    padding-right: min(24vw, 180px);
+    padding-right: min(16vw, 120px);
     gap: 40px;
   }
 
   .hero__badge {
-    min-width: 550px;
+    min-width: 0;
   }
 
   .hero__heading {
-    min-width: 700px;
+    min-width: 0;
   }
 
   .hero__features {
@@ -298,9 +299,9 @@
   .hero {
     padding-top: -50px;
     padding-bottom: 52px;
-    height: 1250px;
+    height: 1350px;
+    overflow-x: clip;
   }
-
 
   .hero__inner {
     flex-direction: column;
@@ -308,6 +309,7 @@
     padding-top: 24px;
     padding-bottom: 0;
     padding-left: 20px;
+    padding-right: 20px;
     gap: 24px;
     min-height: 0;
     width: 100%;
@@ -329,20 +331,20 @@
   }
 
   .hero__badge {
-    min-width: 350px;
+    min-width: 0;
     max-width: 100%;
   }
 
   .hero__heading {
     font-size: 40px;
     line-height: 1.15;
-    min-width: 350px;
+    min-width: 0;
     max-width: 100%;
   }
 
   .hero__subheading {
     font-size: 14px;
-    min-width: 350px;
+    min-width: 0;
     max-width: 100%;
     padding-right: 10px;
   }
@@ -356,7 +358,7 @@
   /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
   .hero__people {
     position: absolute;
-    right: -30px;
+    right: 0;
     bottom: -2px;
     z-index: 1;
     width: min(40vw, 280px);
@@ -427,22 +429,23 @@
 }
 
 @media (max-width: 400px) {
-  .hero__bg{
-    min-width: 320px;
+  .hero__bg {
+    width: 100%;
+    min-width: 100%;
   }
   .hero {
-    padding-top: 50px;
-    min-width: 320px;
-    height: 1400px;
+    padding-top: 40px;
+    width: 100%;
+    min-width: 0;
+    height: 1300px;
+    min-height: 0;
   }
 
   .hero__inner {
     flex-direction: column;
     align-items: stretch;
-    padding-top: 24px;
-    padding-bottom: 0;
-    padding-left: 10px;
-    gap: 24px;
+    padding: 20px 14px 24px;
+    gap: 20px;
     min-height: 0;
     max-width: 100%;
   }
@@ -452,11 +455,12 @@
     display: block;
     position: relative;
     order: 1;
-    max-width: 320px;
+    max-width: 100%;
   }
 
   .hero__content {
     align-items: flex-start;
+    gap: 16px;
     padding-bottom: 0;
     position: relative;
     z-index: 2;
@@ -464,37 +468,40 @@
   }
 
   .hero__badge {
-    min-width: 320px;
+    min-width: 0;
     max-width: 100%;
+    font-size: 13px;
+    line-height: 1.4;
   }
 
   .hero__heading {
-    font-size: 40px;
-    line-height: 1.15;
-    min-width: 320px;
+    font-size: clamp(28px, 10vw, 36px);
+    line-height: 1.12;
+    min-width: 0;
     max-width: 100%;
   }
 
   .hero__subheading {
-    font-size: 14px;
-    min-width: 320px;
+    font-size: 13px;
+    line-height: 1.55;
+    min-width: 0;
     max-width: 100%;
-    padding-right: 10px;
+    padding-right: 0;
   }
 
   .hero__features {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 10px;
     max-width: 100%;
   }
 
   /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
   .hero__people {
     position: absolute;
-    right: -30px;
-    bottom: -2px;
+    right: -18px;
+    bottom: 0;
     z-index: 1;
-    width: min(40vw, 280px);
+    width: min(44vw, 180px);
     align-items: flex-end;
     justify-content: flex-end;
     pointer-events: none;
@@ -502,25 +509,16 @@
   }
 
   .hero__person {
-    height: clamp(210px, 17vw, 210px);
+    height: clamp(160px, 42vw, 200px);
   }
 
   .hero__person--woman {
-    transform: none;
+    transform: translateX(54px) translateY(-12px);
   }
 
   .hero__person--man {
-    margin-left: -74px;
-    transform: none;
-  }
-
-  .hero__person--woman {
-    transform: translateX(122px) translateY(-40px);
-  }
-
-  .hero__person--man {
-    transform: translateX(30px) translateY(-40px);
     margin-left: 0;
+    transform: translateX(-8px) translateY(-12px);
   }
 
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
@@ -540,8 +538,8 @@
   }
 
   .hero__whatsapp {
-    width: min(100%, 220px);
-    border-radius: 21px;
+    width: min(100%, 190px);
+    border-radius: 18px;
   }
 
   .hero__call {
@@ -552,10 +550,10 @@
     order: 2;
     flex: 1 1 auto;
     align-self: stretch;
-    min-width: 320px;
+    min-width: 0;
     max-width: 100%;
     margin: 0 auto;
     padding-bottom: 30px;
-    padding-left: 10px;
+    padding-left: 0;
   }
 }
