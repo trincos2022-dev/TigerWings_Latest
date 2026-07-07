@@ -122,7 +122,7 @@
     max-width: 420px;
     margin: 32px auto 0;
     display: block;
-    transform: rotate(320deg) translateY(120px) translateX(250px);
+    transform: rotate(320deg) translateY(120px) translateX(300px);
   }
   .cta-banner__inner {
     text-align: left;
@@ -141,7 +141,7 @@
     max-width: 420px;
     margin: 32px auto 0;
     display: block;
-    transform: rotate(320deg) translateY(70px) translateX(150px);
+    transform: rotate(320deg) translateY(70px) translateX(250px);
   }
 }
 
@@ -157,7 +157,7 @@
     max-width: 420px;
     margin: 32px auto 0;
     display: block;
-    transform: rotate(320deg) translateY(70px) translateX(50px);
+    transform: rotate(320deg) translateY(70px) translateX(100px);
   }
   .cta-banner__heading {
     font-size: 26px;
