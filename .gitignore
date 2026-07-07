@@ -7,3 +7,4 @@ dist-ssr
 .claude/
 .remember/
 skills/
+.env

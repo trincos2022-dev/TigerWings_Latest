@@ -65,6 +65,7 @@
    from the top (rather than vertically centered) so the nose stays fully in
    frame, matching the reference crop, instead of being symmetrically clipped
    by the section's shorter height. */
+
 .cta-banner__plane {
   position: absolute;
   z-index: 1;
@@ -85,7 +86,7 @@
 
 @media (max-width: 1200px) {
   .cta-banner__plane--desktop {
-    top: -10px;
+    top: 10px;        
     right: -60px;
     width: 480px;
     opacity: 0.95;
