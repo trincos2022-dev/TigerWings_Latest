@@ -3,7 +3,7 @@ import { UserIcon, PhoneIcon, MailIcon, ArrowRightIcon } from "../icons/Icons";
 import "./DemoForm.css";
 import { supabase } from "../../lib/supabase";
 
-const initialState = { name: "", mobile: "", email: "" };
+const initialState = { name: "", mobile: "+91", email: "" };
 
 function DemoForm() {
   const [values, setValues] = useState(initialState);
@@ -70,7 +70,15 @@ function DemoForm() {
               autoComplete="tel"
               value={values.mobile}
               onChange={handleChange}
+              pattern="^\+91[0-9]{10}$"
+              maxLength={13}
               required
+              onInvalid={(e) =>
+                e.target.setCustomValidity(
+                  "Please enter a valid mobile number start with +91",
+                )
+              }
+              onInput={(e) => e.target.setCustomValidity("")}
             />
           </div>
           <div className="demo-form__field">
