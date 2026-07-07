@@ -452,6 +452,10 @@
     min-height: 0;
     max-width: 100%;
   }
+  
+  .hero__features li {
+  font-size: 12px;
+}
 
   /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
   .hero__main {
