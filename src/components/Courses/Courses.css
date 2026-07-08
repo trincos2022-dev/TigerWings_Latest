@@ -100,7 +100,7 @@
 
 @media (max-width: 1100px) {
   .courses{
-    margin-top: 300px;
+    margin-top: 350px;
   }
   .courses__grid {
     grid-template-columns: repeat(3, 1fr);
@@ -118,13 +118,21 @@
 
 @media (max-width: 800px) {
   .courses{
-    margin-top: 320px;
+    margin-top: 350px;
   }
   .courses__grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+@media (max-width: 760px) {
+  .courses{
+    margin-top: 200px;
+  }
+  .courses__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 @media (max-width: 700px) {
   .courses{
     margin-top: 250px;
@@ -140,7 +148,7 @@
 
 @media (max-width: 480px) {
   .courses{
-    margin-top: 300px;
+    margin-top: 200px;
   }
   .courses__grid {
     grid-template-columns: 1fr;
@@ -149,9 +157,15 @@
 
 @media (max-width: 400px) {
   .courses{
-    margin-top: 250px;
+    margin-top: 100px;
   }
   .courses__grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px){
+  .courses{
+    margin-top: 200px;
   }
 }

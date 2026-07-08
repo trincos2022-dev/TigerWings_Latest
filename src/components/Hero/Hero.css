@@ -253,6 +253,10 @@
     gap: 12px;
     max-width: 100%;
   }
+
+  .hero__features li {
+    font-size: 18px;
+  }
  
   .hero__form {
     flex: 0 0 auto;
@@ -300,18 +304,41 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .hero__person--woman {
-    transform: translateX(162px) translateY(60px);
+    transform: translateX(102px) translateY(55px);
   }
  
   .hero__person--man {
-    transform: translateX(30px) translateY(60px);
+    transform: translateX(-20px) translateY(55px);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(70px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(70px);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 870px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(70px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(70px);
     margin-left: 0;
   }
 }
 
 @media (max-width: 800px) {
+
   .hero__person--woman {
     transform: translateX(162px) translateY(120px);
   }
@@ -401,20 +428,11 @@
   }
  
   .hero__person {
-    height: 300px;
+    height: 350px;
   }
- 
-  /* .hero__person--woman {
-    transform: none;
-  }
- 
-  .hero__person--man {
-    margin-left: -74px;
-    transform: none;
-  } */
  
   .hero__person--woman {
-    transform: translateX(122px) translateY(75px);
+    transform: translateX(142px) translateY(75px);
   }
  
   .hero__person--man {
@@ -640,5 +658,44 @@
     margin: 0 auto;
     padding-bottom: 30px;
     padding-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 40px;
+    width: 100%;
+    min-width: 0;
+    height: 1150px;
+    min-height: 0;
+  }
+  .hero__inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .hero__people {
+    position: absolute;
+    right: -18px;
+    bottom: 0;
+    z-index: 1;
+    width: min(44vw, 180px);
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+    margin-right: 0;
+  }
+ 
+  .hero__person {
+    height: clamp(200px, 42vw, 300px);
+  }
+ 
+  .hero__person--woman {
+    transform: translateX(65px) translateY(20px);
+  }
+ 
+  .hero__person--man {
+    margin-left: 0;
+    transform: translateX(0px) translateY(20px);
   }
 }
