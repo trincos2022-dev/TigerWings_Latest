@@ -30,7 +30,7 @@
 
 .navbar__logo-mark {
   height: 30px;
-  width: auto;
+  width: 220px;
 }
 
 .navbar__logo-sub {
@@ -157,7 +157,8 @@
 
 @media (max-width: 640px) {
   .navbar__logo-mark {
-    height: 26px;
+    height: 22px;
+    width: 110px;
   }
   .navbar__phone {
     display: none;
@@ -165,7 +166,7 @@
   /* Mobile "Apply Now" is text-only (per Figma mobile) */
   .navbar__cta {
     font-size: 15px;
-    padding: 10px 22px;
+    padding: 6px 21px;
   }
   .navbar__cta-badge {
     display: none;

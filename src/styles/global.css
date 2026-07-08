@@ -183,6 +183,6 @@ h1, h2, h3, h4, p {
 @media (max-width: 560px) {
   .btn {
     font-size: 14px;
-    padding: 13px 22px;
+    padding: 11px 22px;
   }
 }
