@@ -83,7 +83,7 @@ function Testimonials() {
             />
             <div className="video-card__scrim" />
 
-            <a href="https://youtube.com/shorts/0KVBPJf1fRw?si=unOHq3HpybhuCyD_">
+            <a href="https://youtube.com/shorts/0KVBPJf1fRw?si=unOHq3HpybhuCyD_"  target="_blank" rel="noopener noreferrer">
               <button
                 type="button"
                 className="video-card__play"

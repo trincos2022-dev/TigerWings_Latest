@@ -239,27 +239,27 @@ export const TESTIMONIALS = [
 export const FAQS = [
   {
     q: 'Why choose Tigers Wings Aviation Academy?',
-    a: 'We offer diploma, certification, degree, and commercial pilot training programs in aviation, airport management, cabin crew, hospitality, and related fields.',
+    a: 'Tigers Wings Aviation Academy is a leading aviation institute in Chennai offering Cabin Crew, Pilot Training, and Airport Ground Staff courses. With experienced trainers, practical learning, scholarships of up to 50% for eligible students, and placement assistance, we help students build successful aviation careers.',
      image:faq_1 ,
   },
   {
     q: 'What courses do you offer?',
-    a: 'We offer Cabin Crew / Air Hostess, Airport Ground Staff, Flight Dispatcher, Pilot Training, and RTR Training — each designed around real airline hiring requirements.',
+    a: 'Tiger Wings Aviation Academy provides industry-oriented Cabin Crew Training, Pilot Training guidance, Airport Ground Staff Training, and Aviation Hospitality courses. Our programs are designed to make students job-ready with practical skills and professional development.',
      image:faq_2
   },
   {
     q: 'Do you provide placement assistance?',
-    a: 'Yes, every student receives 100% placement support including mock interviews, grooming sessions, and direct introductions to our hiring airline partners.',
+    a: 'Yes. Tiger Wings Aviation Academy offers placement assistance, interview preparation, communication skills training, and industry-focused coaching to help eligible students secure opportunities with airlines, airports, and aviation companies.',
      image:faq_3
   },
   {
     q: 'Are scholarships available?',
-    a: 'Yes, eligible students can receive scholarships of up to 50% based on merit and need — ask our counsellors for details during your free demo class.',
+    a: 'Yes. Tiger Wings Aviation Academy offers scholarships of up to 50% for eligible students, making quality aviation training in Chennai more accessible. Contact our admissions team to check your eligibility.',
      image:faq_4
   },
   {
     q: 'How can I apply?',
-    a: 'Book a free demo class from this page, or call/WhatsApp us directly. Our admissions team will guide you through the enrollment process.',
+    a: 'Applying is simple. Contact Tiger Wings Aviation Academy, book a free career counselling session, choose the right aviation course in Chennai, and complete your admission process to start your journey toward a rewarding aviation career.',
      image:faq_5
   },
 ];
