@@ -358,7 +358,7 @@
 @media (max-width: 760px) {
   .hero__bg {
     background-image: url('../../assets/figma/web/hero/mobile-hero-bg.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center top;
   }
 
