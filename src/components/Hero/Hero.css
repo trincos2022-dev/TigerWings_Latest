@@ -430,6 +430,51 @@
     padding-left: 0px;
   }
 }
+
+@media (max-width: 500px) {
+  .hero__inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+ 
+  .hero__content {
+    padding-right: 0;
+  }
+
+  .hero__heading {
+    font-size: 44px;
+    line-height: 1.12;
+    min-width: 0;
+    max-width: 100%;
+  }
+ 
+  .hero__subheading {
+    font-size: 13px;
+    line-height: 1.55;
+    min-width: 0;
+    max-width: 100%;
+    padding-right: 0;
+  }
+ 
+  .hero__features li {
+    font-size: 12px;
+  }
+
+  .hero__person--woman {
+    transform: translateX(112px) translateY(40px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(25px) translateY(40px);
+    margin-left: 0;
+  }
+
+  .hero__form {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
  
 @media (max-width: 400px) {
   .hero__bg {
