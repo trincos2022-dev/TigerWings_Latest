@@ -63,6 +63,15 @@
   cursor: pointer;
 }
 
+.faq-item__mobile-image {
+  display: none;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
 .faq-item__question span:first-child {
   font-family: var(--font-display);
   font-size: 30px;
@@ -91,6 +100,15 @@
 }
 
 @media (max-width: 980px) {
+  .faq__list {
+    width: 100%;
+  }
+  .faq-item__mobile-image {
+    display: block;
+  }
+  .faq__visual {
+    display: none;
+  }
   .faq__row {
     flex-direction: column;
     gap: 32px;
@@ -113,6 +131,9 @@
 }
 
 @media (max-width: 560px) {
+  .faq-item__mobile-image {
+    height: 220px;
+  }
   .faq__heading {
     font-size: 26px;
     letter-spacing: -1px;

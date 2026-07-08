@@ -1,3 +1,9 @@
+import faq_1 from "../assets/figma/web/faq/faq-1.png"
+import faq_2 from "../assets/figma/web/faq/faq-2.jpg"
+import faq_3 from "../assets/figma/web/faq/faq-3.png"
+import faq_4 from "../assets/figma/web/faq/faq-4.jpg"
+import faq_5 from "../assets/figma/web/faq/faq-5.png"
+
 export const NAV = {
   phone: '9003480888',
 };
@@ -234,22 +240,27 @@ export const FAQS = [
   {
     q: 'Why choose Tigers Wings Aviation Academy?',
     a: 'We offer diploma, certification, degree, and commercial pilot training programs in aviation, airport management, cabin crew, hospitality, and related fields.',
+     image:faq_1 ,
   },
   {
     q: 'What courses do you offer?',
     a: 'We offer Cabin Crew / Air Hostess, Airport Ground Staff, Flight Dispatcher, Pilot Training, and RTR Training — each designed around real airline hiring requirements.',
+     image:faq_2
   },
   {
     q: 'Do you provide placement assistance?',
     a: 'Yes, every student receives 100% placement support including mock interviews, grooming sessions, and direct introductions to our hiring airline partners.',
+     image:faq_3
   },
   {
     q: 'Are scholarships available?',
     a: 'Yes, eligible students can receive scholarships of up to 50% based on merit and need — ask our counsellors for details during your free demo class.',
+     image:faq_4
   },
   {
     q: 'How can I apply?',
     a: 'Book a free demo class from this page, or call/WhatsApp us directly. Our admissions team will guide you through the enrollment process.',
+     image:faq_5
   },
 ];
 
