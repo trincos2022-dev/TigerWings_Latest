@@ -301,11 +301,47 @@
 }
 
 @media (max-width: 640px) {
-  .testimonials__heading {
-    font-size: 28px;
+  .testimonials {
+    background: rgba(248, 250, 252, 1);
+  }
+  .testimonials .section-eyebrow.testimonials__eyebrow {
+  background: rgba(47, 128, 237, 0.1);;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  color: rgba(47, 128, 237, 1);
+  font-family: var(--font-nav);
+  text-transform: none;
+  font-size: 12px;
+  padding: 12px 20px;
+}
+
+  .testimonials h2.testimonials__heading {
+    font-size: 26px;
+    color: #0A2A66;
   }
 
+  .testimonials p.testimonials__subheading{
+    color: #62748E;
+    font-size: 15px;
+  }
+  
   .testimonials__grid {
     grid-template-columns: 1fr;
   }
+
+  .testimonial-card{
+    box-shadow: var(--shadow-card);
+  }
+
+  .video-card {
+  position: relative;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  isolation: isolate;
+  box-shadow: 0 20px 45px -18px rgba(10, 42, 102, 0.55);
+  background-color: white;
+}
 }
