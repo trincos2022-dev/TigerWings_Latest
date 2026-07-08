@@ -6,6 +6,11 @@ import './FAQ.css';
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(0);
+const currentImage =
+  openIndex >= 0
+    ? FAQS[openIndex]?.image
+    : faqImage; 
+
 
   return (
     <section className="faq section">
@@ -13,7 +18,7 @@ function FAQ() {
         <div className="faq__left">
           <h2 className="faq__heading">Frequently Asked Questions</h2>
           <div className="faq__visual">
-            <img src={faqImage} alt="Aviation career at Tiger Wings" loading="lazy" className="faq__image" />
+            <img key={currentImage} src={currentImage} alt="Aviation career at Tiger Wings" loading="lazy" className="faq__image" />
           </div>
         </div>
 
@@ -33,7 +38,12 @@ function FAQ() {
                     {isOpen ? <MinusIcon size={22} color="#0f1b52" /> : <PlusIcon size={22} color="#0f1b52" />}
                   </span>
                 </button>
-                {isOpen && <p className="faq-item__answer">{item.a}</p>}
+                {isOpen && (
+                  <div className="faq-item__content">
+                    <p className="faq-item__answer">{item.a}</p>
+                    <img src={item.image} alt={item.q} className='faq-item__mobile-image' />
+                  </div>
+                )}
               </div>
             );
           })}
