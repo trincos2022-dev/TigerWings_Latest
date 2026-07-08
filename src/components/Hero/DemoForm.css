@@ -82,3 +82,23 @@
   font-weight: 600;
   text-align: center;
 }
+
+@media (max-width: 1024px) {
+  .demo-form__title {
+    text-align: center;
+}
+
+.demo-form__subtitle {
+ text-align: center;  
+}
+}
+
+@media (max-width: 450px) {
+  .demo-form__title {
+    text-align: left;
+}
+
+.demo-form__subtitle {
+ text-align: left;  
+}
+}

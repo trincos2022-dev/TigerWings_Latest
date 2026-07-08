@@ -15,6 +15,7 @@
 .hero__bg {
   position: absolute;
   inset: 0;
+  background-image: url('../../assets/figma/web/hero/img-poster332.png');
   background-size: cover;
   background-position: 62% center;
   background-repeat: no-repeat;
@@ -228,6 +229,7 @@
     position: relative;
     order: 1;
     min-height: clamp(380px, 56vw, 520px);
+    /* overflow: hidden; */
   }
  
   .hero__content {
@@ -251,6 +253,10 @@
     grid-template-columns: 1fr;
     gap: 12px;
     max-width: 100%;
+  }
+
+  .hero__features li {
+    font-size: 18px;
   }
  
   .hero__form {
@@ -278,7 +284,7 @@
     flex: none;
     width: min(34vw, 300px);
     justify-content: flex-end;
-    align-self: flex-end;
+    align-self: flex-end;   
   }
  
   .hero__person {
@@ -286,16 +292,76 @@
   }
  
   .hero__person--woman {
-    transform: translateX(122px) translateY(40px);
+    transform: translateX(102px) translateY(45px);
   }
  
   .hero__person--man {
-    transform: translateX(0) translateY(40px);
+    transform: translateX(-20px) translateY(45px);
+    margin-left: 0;
+  }
+
+  .hero__form {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero__person--woman {
+    transform: translateX(102px) translateY(55px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(-20px) translateY(55px);
     margin-left: 0;
   }
 }
+
+@media (max-width: 900px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(70px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(70px);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 870px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(70px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(70px);
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .hero__person--woman {
+    transform: translateX(162px) translateY(120px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(120px);
+    margin-left: 0;
+  }  
+
+  .hero__form {
+    margin-top: 80px;
+  }
+} 
+
  
 @media (max-width: 760px) {
+  .hero__bg {
+    background-image: url('../../assets/figma/web/hero/mobile-hero-bg.png');
+    background-size: contain;
+    background-position: center top;
+  }
+
   .hero {
     padding-top: -50px;
     padding-bottom: 52px;
@@ -369,24 +435,15 @@
   }
  
   .hero__person {
-    height: 300px;
+    height: 350px;
   }
  
   .hero__person--woman {
-    transform: none;
+    transform: translateX(142px) translateY(75px);
   }
  
   .hero__person--man {
-    margin-left: -74px;
-    transform: none;
-  }
- 
-  .hero__person--woman {
-    transform: translateX(122px) translateY(40px);
-  }
- 
-  .hero__person--man {
-    transform: translateX(30px) translateY(40px);
+    transform: translateX(30px) translateY(75px);
     margin-left: 0;
   }
  
@@ -428,6 +485,51 @@
     margin-top: 55px;
     padding-bottom: 30px;
     padding-left: 0px;
+  }
+}
+
+@media (max-width: 500px) {
+  .hero__inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+ 
+  .hero__content {
+    padding-right: 0;
+  }
+
+  .hero__heading {
+    font-size: 44px;
+    line-height: 1.12;
+    min-width: 0;
+    max-width: 100%;
+  }
+ 
+  .hero__subheading {
+    font-size: 13px;
+    line-height: 1.55;
+    min-width: 0;
+    max-width: 100%;
+    padding-right: 0;
+  }
+ 
+  .hero__features li {
+    font-size: 12px;
+  }
+
+  .hero__person--woman {
+    transform: translateX(112px) translateY(40px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(25px) translateY(40px);
+    margin-left: 0;
+  }
+
+  .hero__form {
+    margin-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 }
  
@@ -515,16 +617,16 @@
   }
  
   .hero__person {
-    height: clamp(160px, 42vw, 200px);
+    height: clamp(200px, 42vw, 300px);
   }
  
   .hero__person--woman {
-    transform: translateX(54px) translateY(-12px);
+    transform: translateX(54px) translateY(20px);
   }
  
   .hero__person--man {
     margin-left: 0;
-    transform: translateX(-8px) translateY(-12px);
+    transform: translateX(-8px) translateY(20px);
   }
  
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
@@ -563,5 +665,55 @@
     margin: 0 auto;
     padding-bottom: 30px;
     padding-left: 0;
+  }
+}
+
+@media (max-width: 360px) {
+  .hero {
+    padding-top: 40px;
+    width: 100%;
+    min-width: 0;
+    height: 1150px;
+    min-height: 0;
+  }
+  .hero__inner {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .hero__people {
+    position: absolute;
+    right: -18px;
+    bottom: 0;
+    z-index: 1;
+    width: min(44vw, 180px);
+    align-items: flex-end;
+    justify-content: flex-end;
+    pointer-events: none;
+    margin-right: 0;
+  }
+ 
+  .hero__person {
+    height: clamp(200px, 42vw, 300px);
+  }
+ 
+  .hero__person--woman {
+    transform: translateX(65px) translateY(20px);
+  }
+ 
+  .hero__person--man {
+    margin-left: 0;
+    transform: translateX(0px) translateY(20px);
+  }
+
+  .hero__form {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-left: 10px;
   }
 }
