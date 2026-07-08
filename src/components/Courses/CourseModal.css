@@ -55,7 +55,7 @@
 }
 
 .course-modal__hero {
-  position: relative;
+  position: sticky;
   min-height: 210px;
   background-size: cover;
   background-position: center;
@@ -76,7 +76,7 @@
 
 .course-modal__badge {
   align-self: flex-start;
-  background: rgba(255, 255, 255, 0.16);
+  background:#FFC10738;
   color: var(--gold);
   font-family: var(--font-nav);
   font-size: 12px;

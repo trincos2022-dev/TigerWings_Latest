@@ -30,11 +30,12 @@ function CourseModal({ course, image, onClose }) {
   return createPortal(
     <div className="course-modal" role="dialog" aria-modal="true" aria-label={d.title} onClick={onClose}>
       <div className="course-modal__panel" onClick={(e) => e.stopPropagation()}>
-        <button type="button" className="course-modal__close" onClick={onClose} aria-label="Close">
-          &times;
-        </button>
+       
 
         <div className="course-modal__hero" style={{ backgroundImage: `url(${image})` }}>
+           <button type="button" className="course-modal__close" onClick={onClose} aria-label="Close">
+          &times;
+        </button>
           <div className="course-modal__hero-overlay">
             <span className="course-modal__badge">🏆 Industry-Recognized Diploma</span>
             <h3 className="course-modal__title">{d.title}</h3>
