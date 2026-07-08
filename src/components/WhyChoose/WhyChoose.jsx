@@ -6,7 +6,7 @@ import imgReception from '../../assets/figma/web/why-choose/img-frame248.jpg';
 import imgStudyGroup from '../../assets/figma/web/why-choose/img-frame249.png';
 import imgClassroom from '../../assets/figma/web/why-choose/img-frame250.png';
 import imgReview from '../../assets/figma/web/why-choose/img-whats-app-image20260630-at75657-pm1.jpg';
-import iconAirplane from '../../assets/figma/web/why-choose/img-vuesax-linear-airplane.svg';
+import iconAirplane from '../../assets/figma/web/why-choose/airplane.png';
 import './WhyChoose.css';
 
 function WhyChoose() {
