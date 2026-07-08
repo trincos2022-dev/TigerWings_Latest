@@ -9,6 +9,7 @@ function CTABanner() {
   return (
     <section className="cta-banner">
       <div className="container cta-banner__inner">
+        <img src={bgImage} alt="" aria-hidden="true" className="cta-banner__plane cta-banner__plane--mobile" />
         <div className="cta-banner__content">
           <h2 className="cta-banner__heading">Turn Your Passion for Aviation into a Successful Career</h2>
           <p className="cta-banner__text">
@@ -22,7 +23,7 @@ function CTABanner() {
         </div>
       </div>
       <img src={tiltedPlane} alt="" aria-hidden="true" className="cta-banner__plane cta-banner__plane--desktop" />
-      <img src={bgImage} alt="" aria-hidden="true" className="cta-banner__plane cta-banner__plane--mobile" />
+      {/* <img src={bgImage} alt="" aria-hidden="true" className="cta-banner__plane cta-banner__plane--mobile" /> */}
     </section>
   );
 }

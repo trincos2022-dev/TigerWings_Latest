@@ -45,9 +45,9 @@ function Footer() {
 
         <div className="footer__bottom">
           <div className="footer__social">
-            <a href="#" aria-label="Instagram"><InstagramIcon size={18} /></a>
-            <a href="#" aria-label="LinkedIn"><LinkedInIcon size={18} /></a>
-            <a href="#" aria-label="Facebook"><FacebookIcon size={18} /></a>
+            <a href="https://www.instagram.com/tigerswings_aviation_academy?igsh=MWU0MW5lZWl6cjE5dQ==" aria-label="Instagram"><InstagramIcon size={18} /></a>
+            <a href="https://www.linkedin.com/company/tigerswings/" aria-label="LinkedIn"><LinkedInIcon size={18} /></a>
+            <a href="https://www.facebook.com/share/1DNUjVacQv/" aria-label="Facebook"><FacebookIcon size={18} /></a>
           </div>
           <div className="footer__legal">
             <a href="#">Privacy Policy</a>

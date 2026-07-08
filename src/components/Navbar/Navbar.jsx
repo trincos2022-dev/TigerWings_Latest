@@ -22,7 +22,7 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="container navbar__inner">
-        <a href="#top" className="navbar__logo" aria-label="Tigers Wings Aviation Academy">
+        <a href="https://tigerswings.com" className="navbar__logo" aria-label="Tigers Wings Aviation Academy">
           <img src={logoMark} alt="Tigers Wings" className="navbar__logo-mark" />
           <span className="navbar__logo-sub">Aviation Academy</span>
         </a>
