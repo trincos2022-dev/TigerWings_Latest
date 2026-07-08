@@ -698,4 +698,15 @@
     margin-left: 0;
     transform: translateX(0px) translateY(20px);
   }
+
+  .hero__form {
+    order: 2;
+    flex: 1 1 auto;
+    align-self: stretch;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    padding-left: 10px;
+  }
 }
