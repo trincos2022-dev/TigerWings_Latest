@@ -1,13 +1,13 @@
-import { WHY_CHOOSE_FEATURES } from '../../data/content';
-import { MaximizeIcon } from '../icons/Icons';
-import { usePopup } from '../../context/PopupContext';
-import imgBuilding from '../../assets/figma/web/why-choose/img-rectangle101.png';
-import imgReception from '../../assets/figma/web/why-choose/img-frame248.jpg';
-import imgStudyGroup from '../../assets/figma/web/why-choose/img-frame249.png';
-import imgClassroom from '../../assets/figma/web/why-choose/img-frame250.png';
-import imgReview from '../../assets/figma/web/why-choose/img-whats-app-image20260630-at75657-pm1.jpg';
-import iconAirplane from '../../assets/figma/web/why-choose/airplane.png';
-import './WhyChoose.css';
+import { WHY_CHOOSE_FEATURES } from "../../data/content";
+import { MaximizeIcon } from "../icons/Icons";
+import { usePopup } from "../../context/PopupContext";
+import imgBuilding from "../../assets/figma/web/why-choose/img-rectangle101.png";
+import imgReception from "../../assets/figma/web/why-choose/img-frame248.jpg";
+import imgStudyGroup from "../../assets/figma/web/why-choose/img-frame249.png";
+import imgClassroom from "../../assets/figma/web/why-choose/img-frame250.png";
+import imgReview from "../../assets/figma/web/why-choose/img-whats-app-image20260630-at75657-pm1.jpg";
+import iconAirplane from "../../assets/figma/web/why-choose/airplane.png";
+import "./WhyChoose.css";
 
 function WhyChoose() {
   const { openScholarship } = usePopup();
@@ -17,25 +17,51 @@ function WhyChoose() {
       <div className="container why-choose__row">
         <div className="why-choose__collage">
           <div className="why-choose__tall">
-            <img src={imgBuilding} alt="Tiger Wings Aviation Academy campus" loading="lazy" />
+            <img
+              src={imgBuilding}
+              alt="Tiger Wings Aviation Academy campus"
+              loading="lazy"
+            />
           </div>
           <div className="why-choose__stack">
-            <img src={imgReception} alt="Tiger Wings Aviation Academy reception" loading="lazy" />
-            <img src={imgStudyGroup} alt="Aviation students in a briefing session" loading="lazy" />
-            <img src={imgClassroom} alt="Aviation academy classroom" loading="lazy" />
+            <img
+              src={imgReception}
+              alt="Tiger Wings Aviation Academy reception"
+              loading="lazy"
+            />
+            <img
+              src={imgStudyGroup}
+              alt="Aviation students in a briefing session"
+              loading="lazy"
+            />
+            <img
+              src={imgClassroom}
+              alt="Aviation academy classroom"
+              loading="lazy"
+            />
           </div>
         </div>
 
         <div className="why-choose__content">
           <div className="why-choose__header">
             <h2>Why Choose Tiger Wings</h2>
-            <p>A premium training experience designed to make you industry-ready from day one.</p>
+            <p>
+              A premium training experience designed to make you industry-ready
+              from day one.
+            </p>
           </div>
 
           <ul className="why-choose__list">
             {WHY_CHOOSE_FEATURES.map((feature) => (
               <li key={feature}>
-                <img src={iconAirplane} alt="" aria-hidden="true" className="why-choose__list-icon" />
+                <img
+                  src={iconAirplane}
+                  alt=""
+                  width={20}
+                  height={20}
+                  aria-hidden="true"
+                  className="why-choose__list-icon"
+                />
                 {feature}
               </li>
             ))}
@@ -59,7 +85,11 @@ function WhyChoose() {
             </span>
           </a>
 
-          <button type="button" className="why-choose__cta" onClick={openScholarship}>
+          <button
+            type="button"
+            className="why-choose__cta"
+            onClick={openScholarship}
+          >
             Apply Now
           </button>
         </div>
