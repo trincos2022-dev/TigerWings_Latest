@@ -228,6 +228,7 @@
     position: relative;
     order: 1;
     min-height: clamp(380px, 56vw, 520px);
+    /* overflow: hidden; */
   }
  
   .hero__content {
@@ -278,7 +279,7 @@
     flex: none;
     width: min(34vw, 300px);
     justify-content: flex-end;
-    align-self: flex-end;
+    align-self: flex-end;   
   }
  
   .hero__person {
@@ -286,14 +287,45 @@
   }
  
   .hero__person--woman {
-    transform: translateX(122px) translateY(40px);
+    transform: translateX(102px) translateY(45px);
   }
  
   .hero__person--man {
-    transform: translateX(0) translateY(40px);
+    transform: translateX(-20px) translateY(45px);
+    margin-left: 0;
+  }
+
+  .hero__form {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(60px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(60px);
     margin-left: 0;
   }
 }
+
+@media (max-width: 800px) {
+  .hero__person--woman {
+    transform: translateX(162px) translateY(120px);
+  }
+ 
+  .hero__person--man {
+    transform: translateX(30px) translateY(120px);
+    margin-left: 0;
+  }  
+
+  .hero__form {
+    margin-top: 80px;
+  }
+} 
+
  
 @media (max-width: 760px) {
   .hero {
@@ -372,21 +404,21 @@
     height: 300px;
   }
  
-  .hero__person--woman {
+  /* .hero__person--woman {
     transform: none;
   }
  
   .hero__person--man {
     margin-left: -74px;
     transform: none;
-  }
+  } */
  
   .hero__person--woman {
-    transform: translateX(122px) translateY(40px);
+    transform: translateX(122px) translateY(75px);
   }
  
   .hero__person--man {
-    transform: translateX(30px) translateY(40px);
+    transform: translateX(30px) translateY(75px);
     margin-left: 0;
   }
  
@@ -560,16 +592,16 @@
   }
  
   .hero__person {
-    height: clamp(160px, 42vw, 200px);
+    height: clamp(200px, 42vw, 300px);
   }
  
   .hero__person--woman {
-    transform: translateX(54px) translateY(-12px);
+    transform: translateX(54px) translateY(20px);
   }
  
   .hero__person--man {
     margin-left: 0;
-    transform: translateX(-8px) translateY(-12px);
+    transform: translateX(-8px) translateY(20px);
   }
  
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
