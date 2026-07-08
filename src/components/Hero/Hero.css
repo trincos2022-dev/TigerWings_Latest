@@ -11,7 +11,7 @@
   overflow: visible;
   height: 770px;
 }
-
+ 
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -22,7 +22,7 @@
   z-index: 0;
   overflow: visible;
 }
-
+ 
 .hero::after {
   content: "";
   position: absolute;
@@ -36,7 +36,7 @@
   z-index: 0;
   pointer-events: none;
 }
-
+ 
 .hero__inner {
   position: relative;
   z-index: 2;
@@ -46,43 +46,43 @@
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-
+ 
   min-height: clamp(500px, 44vw, 700px);
   padding: 50px;
   box-sizing: border-box;
 }
-
+ 
 /* Transparent wrapper on desktop (content + people lay out directly in the flex row);
    becomes a positioning context for the absolute pilots on mobile. */
 .hero__main {
   display: contents;
 }
-
+ 
 /* ---- Left: text content ---- */
 /* .hero__content {
   flex: 0 1 520px;
   max-width: 520px;
-  min-width: 520px; 
+  min-width: 520px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   gap: 22px;
 } */
-
+ 
 .hero__content {
   flex: 0 1 clamp(340px, 42vw, 750px);
   width: 100%;
   max-width: 1250px;
   min-width: 0;
-
+ 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   gap: 22px;
 }
-
+ 
 .hero__badge {
   display: inline-flex;
   align-items: center;
@@ -93,12 +93,12 @@
   font-weight: 600;
   max-width: 520px;
 }
-
+ 
 .hero__badge-emoji {
   font-size: 15px;
   line-height: 1;
 }
-
+ 
 .hero__heading {
   font-size: clamp(42px, 4.8vw, 60px);
   line-height: 1.1;
@@ -107,18 +107,18 @@
   letter-spacing: -0.01em;
   max-width: 1150px;
 }
-
+ 
 .hero__heading-highlight {
   color: var(--gold);
 }
-
+ 
 .hero__subheading {
   font-size: 17px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
   max-width: 560px;
 }
-
+ 
 .hero__features {
   list-style: none;
   margin: 0;
@@ -127,7 +127,7 @@
   grid-template-columns: repeat(2, auto);
   gap: 14px 32px;
 }
-
+ 
 .hero__features li {
   display: flex;
   align-items: center;
@@ -136,19 +136,19 @@
   font-weight: 600;
   color: var(--white);
 }
-
+ 
 .hero__ctas {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
   margin-top: 6px;
 }
-
+ 
 /* "Call Now" is a mobile-only CTA (desktop Figma shows WhatsApp only) */
 .hero__call {
   display: none;
 }
-
+ 
 /* ---- Center: student cutouts ---- */
 .hero__people {
   flex: 0 0 clamp(280px, 24vw, 430px);
@@ -159,7 +159,7 @@
   pointer-events: none;
   margin-right: 0;
 }
-
+ 
 .hero__person {
   height: clamp(480px, 54vw, 660px);
   width: auto;
@@ -167,20 +167,20 @@
   object-position: bottom;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.35));
 }
-
+ 
 .hero__person--woman {
   transform: translateX(clamp(-120px, -10vw, -40px))
     translateY(clamp(86px, 8vw, 122px));
   z-index: 1;
 }
-
+ 
 .hero__person--man {
   z-index: 2;
   transform: translateX(clamp(-120px, -10vw, -24px))
     translateY(clamp(96px, 8.5vw, 136px));
   margin-left: clamp(-230px, -14vw, -150px);
 }
-
+ 
 /* ---- Right: enquiry form ---- */
 .hero__form {
   flex: 0 1 clamp(360px, 32vw, 470px);
@@ -191,7 +191,7 @@
   padding-bottom: 20px;
   margin-left: auto;
 }
-
+ 
 /* ---- Responsive ---- */
 @media (max-width: 1200px) {
   .hero {
@@ -200,16 +200,16 @@
   .hero__inner {
     min-height: clamp(460px, 52vw, 640px);
   }
-
+ 
   .hero__heading {
     font-size: clamp(38px, 4.3vw, 52px);
   }
-
+ 
   .hero__person {
     height: clamp(380px, 42vw, 520px);
   }
 }
-
+ 
 @media (max-width: 1024px) {
   .hero {
     padding-top: 50px;
@@ -222,14 +222,14 @@
     min-height: 0;
     gap: 22px;
   }
-
+ 
   .hero__main {
     display: block;
     position: relative;
     order: 1;
     min-height: clamp(380px, 56vw, 520px);
   }
-
+ 
   .hero__content {
     flex: 1 1 auto;
     max-width: none;
@@ -238,21 +238,21 @@
     padding-right: min(16vw, 120px);
     gap: 40px;
   }
-
+ 
   .hero__badge {
     min-width: 0;
   }
-
+ 
   .hero__heading {
     min-width: 0;
   }
-
+ 
   .hero__features {
     grid-template-columns: 1fr;
     gap: 12px;
     max-width: 100%;
   }
-
+ 
   .hero__form {
     flex: 0 0 auto;
     order: 2;
@@ -264,11 +264,11 @@
     margin-top: 75px;
     margin-bottom: 22px;
   }
-
+ 
   .hero__form .demo-form {
     max-width: 100%;
   }
-
+ 
   .hero__people {
     position: absolute;
     right: 0;
@@ -280,28 +280,29 @@
     justify-content: flex-end;
     align-self: flex-end;
   }
-
+ 
   .hero__person {
     height: 400px;
   }
-
+ 
   .hero__person--woman {
     transform: translateX(122px) translateY(40px);
   }
-
+ 
   .hero__person--man {
     transform: translateX(0) translateY(40px);
     margin-left: 0;
   }
 }
-
+ 
 @media (max-width: 760px) {
   .hero {
+    padding-top: -50px;
     padding-bottom: 52px;
     height: 1350px;
     overflow-x: clip;
   }
-
+ 
   .hero__inner {
     flex-direction: column;
     align-items: stretch;
@@ -313,14 +314,14 @@
     min-height: 0;
     width: 100%;
   }
-
+ 
   /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
   .hero__main {
     display: block;
     position: relative;
     order: 1;
   }
-
+ 
   .hero__content {
     align-items: flex-start;
     padding-bottom: 0;
@@ -328,32 +329,32 @@
     z-index: 2;
     width: 100%;
   }
-
+ 
   .hero__badge {
     min-width: 0;
     max-width: 100%;
   }
-
+ 
   .hero__heading {
     font-size: 40px;
     line-height: 1.15;
     min-width: 0;
     max-width: 100%;
   }
-
+ 
   .hero__subheading {
     font-size: 14px;
     min-width: 0;
     max-width: 100%;
     padding-right: 10px;
   }
-
+ 
   .hero__features {
     grid-template-columns: 1fr;
     gap: 12px;
     max-width: 100%;
   }
-
+ 
   /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
   .hero__people {
     position: absolute;
@@ -366,30 +367,29 @@
     pointer-events: none;
     margin-right: 0;
   }
-
+ 
   .hero__person {
     height: 300px;
   }
-
+ 
   .hero__person--woman {
     transform: none;
-    overflow: hidden;
   }
-
+ 
   .hero__person--man {
     margin-left: -74px;
     transform: none;
   }
-
+ 
   .hero__person--woman {
     transform: translateX(122px) translateY(40px);
   }
-
+ 
   .hero__person--man {
     transform: translateX(30px) translateY(40px);
     margin-left: 0;
   }
-
+ 
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
   .hero__ctas {
     flex-direction: column;
@@ -399,25 +399,25 @@
     position: relative;
     z-index: 2;
   }
-
+ 
   .hero__whatsapp,
   .hero__call {
     flex: 0 0 auto;
     max-width: 100%;
-    
+   
   }
-
+ 
   .hero__whatsapp {
     width: min(100%, 200px);
     border-radius: 21px;
   }
-
+ 
   .hero__call {
     display: inline-flex;
     width: min(100%, 200px);
     border-radius: 21px;
   }
-
+ 
   .hero__form {
     order: 2;
     flex: 1 1 auto;
@@ -430,7 +430,7 @@
     padding-left: 0px;
   }
 }
-
+ 
 @media (max-width: 400px) {
   .hero__bg {
     width: 100%;
@@ -443,7 +443,7 @@
     height: 1300px;
     min-height: 0;
   }
-
+ 
   .hero__inner {
     flex-direction: column;
     align-items: stretch;
@@ -452,11 +452,11 @@
     min-height: 0;
     max-width: 100%;
   }
-  
+ 
   .hero__features li {
   font-size: 12px;
 }
-
+ 
   /* hero__main becomes the positioning context: content in flow, pilots bottom-right */
   .hero__main {
     display: block;
@@ -464,30 +464,29 @@
     order: 1;
     max-width: 100%;
   }
-
+ 
   .hero__content {
     align-items: flex-start;
     gap: 16px;
     padding-bottom: 0;
     position: relative;
     z-index: 2;
-    width: 100%;
   }
-
+ 
   .hero__badge {
     min-width: 0;
     max-width: 100%;
     font-size: 13px;
     line-height: 1.4;
   }
-
+ 
   .hero__heading {
     font-size: clamp(28px, 10vw, 36px);
     line-height: 1.12;
     min-width: 0;
     max-width: 100%;
   }
-
+ 
   .hero__subheading {
     font-size: 13px;
     line-height: 1.55;
@@ -495,13 +494,13 @@
     max-width: 100%;
     padding-right: 0;
   }
-
+ 
   .hero__features {
     grid-template-columns: 1fr;
     gap: 10px;
     max-width: 100%;
   }
-
+ 
   /* Pilots: floating bottom-right, beside the buttons (per Figma mobile) */
   .hero__people {
     position: absolute;
@@ -514,20 +513,20 @@
     pointer-events: none;
     margin-right: 0;
   }
-
+ 
   .hero__person {
     height: clamp(160px, 42vw, 200px);
   }
-
+ 
   .hero__person--woman {
     transform: translateX(54px) translateY(-12px);
   }
-
+ 
   .hero__person--man {
     margin-left: 0;
     transform: translateX(-8px) translateY(-12px);
   }
-
+ 
   /* Both CTAs stacked, left-aligned, content-width, 16px radius (per Figma mobile) */
   .hero__ctas {
     flex-direction: column;
@@ -536,25 +535,25 @@
     max-width: 100%;
     position: relative;
     z-index: 2;
-    
+   
   }
-
+ 
   .hero__whatsapp,
   .hero__call {
     flex: 0 0 auto;
     max-width: 100%;
   }
-
+ 
   .hero__whatsapp {
     width: min(100%, 160px);
     border-radius: 21px;
   }
-
+ 
   .hero__call {
      width: min(100%, 160px);
     border-radius: 21px;
   }
-
+ 
   .hero__form {
     order: 2;
     flex: 1 1 auto;
