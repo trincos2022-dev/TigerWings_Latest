@@ -1,4 +1,3 @@
-import bgPlane from '../../assets/figma/web/hero/img-poster332.png';
 import womanCutout from '../../assets/figma/web/hero/img-aadhira-v21.png';
 import manCutout from '../../assets/figma/web/hero/img-arayan21.png';
 import { CheckIcon, WhatsAppIcon, PhoneIcon } from '../icons/Icons';
@@ -10,7 +9,7 @@ import './Hero.css';
 function Hero() {
   return (
     <section className="hero" id="top">
-      <div className="hero__bg" style={{ backgroundImage: `url(${bgPlane})` }} aria-hidden="true" />
+      <div className="hero__bg" aria-hidden="true" />
 
       <div className="container hero__inner">
         <div className="hero__main">

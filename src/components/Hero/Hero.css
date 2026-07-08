@@ -15,6 +15,7 @@
 .hero__bg {
   position: absolute;
   inset: 0;
+  background-image: url('../../assets/figma/web/hero/img-poster332.png');
   background-size: cover;
   background-position: 62% center;
   background-repeat: no-repeat;
@@ -355,6 +356,12 @@
 
  
 @media (max-width: 760px) {
+  .hero__bg {
+    background-image: url('../../assets/figma/web/hero/mobile-hero-bg.png');
+    background-size: contain;
+    background-position: center top;
+  }
+
   .hero {
     padding-top: -50px;
     padding-bottom: 52px;
