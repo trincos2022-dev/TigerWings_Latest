@@ -21,7 +21,7 @@ function AppContent() {
 
   // Auto-open the scholarship offer shortly after the app loads (entry popup).
   useEffect(() => {
-    const timer = setTimeout(() => openScholarship(), 1000);
+    const timer = setTimeout(() => openScholarship(), 10000);
     return () => clearTimeout(timer);
   }, [openScholarship]);
 
