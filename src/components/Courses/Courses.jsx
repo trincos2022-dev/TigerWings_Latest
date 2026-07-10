@@ -58,7 +58,7 @@ function Courses() {
                   </div>
                 </dl>
 
-                {/* <div className="course-card__actions">
+                <div className="course-card__actions">
                   <button
                     type="button"
                     className="btn btn-navy btn-sm course-card__cta"
@@ -66,7 +66,7 @@ function Courses() {
                   >
                     View Details <ArrowRightIcon size={14} color="#fff" />
                   </button>
-                </div> */}
+                </div>
               </div>
             </article>
           ))}
