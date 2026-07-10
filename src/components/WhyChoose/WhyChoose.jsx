@@ -10,7 +10,8 @@ import iconAirplane from "../../assets/figma/web/why-choose/airplane.png";
 import "./WhyChoose.css";
 
 function WhyChoose() {
-  const { openScholarship } = usePopup();
+  // const { openScholarship } = usePopup();
+  const { triggerApplyNow } = usePopup();
 
   return (
     <section className="why-choose section">
@@ -88,7 +89,7 @@ function WhyChoose() {
           <button
             type="button"
             className="why-choose__cta"
-            onClick={openScholarship}
+            onClick={triggerApplyNow}
           >
             Apply Now
           </button>

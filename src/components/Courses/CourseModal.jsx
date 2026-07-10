@@ -1,43 +1,65 @@
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-import { ClockIcon, WalletIcon, BriefcaseIcon, CheckIcon, WhatsAppIcon, ArrowRightIcon } from '../icons/Icons';
-import { usePopup } from '../../context/PopupContext';
-import './CourseModal.css';
+import { useEffect } from "react";
+import { createPortal } from "react-dom";
+import {
+  ClockIcon,
+  WalletIcon,
+  BriefcaseIcon,
+  CheckIcon,
+  WhatsAppIcon,
+  ArrowRightIcon,
+} from "../icons/Icons";
+import { usePopup } from "../../context/PopupContext";
+import "./CourseModal.css";
 
 function CourseModal({ course, image, onClose }) {
-  const { openScholarship } = usePopup();
+  // const { openScholarship, } = usePopup();
+  const { triggerApplyNow } = usePopup();
   const d = course?.diploma;
 
   function handleApply() {
     onClose();
-    openScholarship();
+    triggerApplyNow();
   }
 
   useEffect(() => {
     function onKey(e) {
-      if (e.key === 'Escape') onClose();
+      if (e.key === "Escape") onClose();
     }
-    document.addEventListener('keydown', onKey);
-    document.body.style.overflow = 'hidden';
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
     return () => {
-      document.removeEventListener('keydown', onKey);
-      document.body.style.overflow = '';
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
     };
   }, [onClose]);
 
   if (!course || !d) return null;
 
   return createPortal(
-    <div className="course-modal" role="dialog" aria-modal="true" aria-label={d.title} onClick={onClose}>
+    <div
+      className="course-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-label={d.title}
+      onClick={onClose}
+    >
       <div className="course-modal__panel" onClick={(e) => e.stopPropagation()}>
-       
-
-        <div className="course-modal__hero" style={{ backgroundImage: `url(${image})` }}>
-           <button type="button" className="course-modal__close" onClick={onClose} aria-label="Close">
-          &times;
-        </button>
+        <div
+          className="course-modal__hero"
+          style={{ backgroundImage: `url(${image})` }}
+        >
+          <button
+            type="button"
+            className="course-modal__close"
+            onClick={onClose}
+            aria-label="Close"
+          >
+            &times;
+          </button>
           <div className="course-modal__hero-overlay">
-            <span className="course-modal__badge">🏆 Industry-Recognized Diploma</span>
+            <span className="course-modal__badge">
+              🏆 Industry-Recognized Diploma
+            </span>
             <h3 className="course-modal__title">{d.title}</h3>
             <p className="course-modal__tagline">{d.tagline}</p>
           </div>
@@ -93,7 +115,11 @@ function CourseModal({ course, image, onClose }) {
         </div>
 
         <div className="course-modal__actions">
-          <button type="button" className="btn btn-primary" onClick={handleApply}>
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleApply}
+          >
             Apply Now <ArrowRightIcon size={16} color="#0a2a66" />
           </button>
           <a
@@ -108,7 +134,7 @@ function CourseModal({ course, image, onClose }) {
         </div>
       </div>
     </div>,
-    document.body
+    document.body,
   );
 }
 
