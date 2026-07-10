@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { UserIcon, PhoneIcon, MailIcon, ArrowRightIcon } from "../icons/Icons";
 import "./DemoForm.css";
 import { supabase } from "../../lib/supabase";
+import { usePopup } from "../../context/PopupContext";
 
 const initialState = { name: "", mobile: "+91", email: "" };
 
@@ -9,6 +10,20 @@ function DemoForm() {
   const [values, setValues] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const nameInputRef = useRef(null);
+  const { applyNowSignal } = usePopup();
+
+  useEffect(() => {
+    if (applyNowSignal === 0) return;
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
+
+    const timer = setTimeout(() => {
+      nameInputRef.current?.focus();
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, [applyNowSignal]);
 
   function handleChange(e) {
     setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -55,6 +70,7 @@ function DemoForm() {
               autoComplete="name"
               value={values.name}
               onChange={handleChange}
+              ref={nameInputRef}
               required
             />
           </div>
