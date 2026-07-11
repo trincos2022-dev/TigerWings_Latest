@@ -23,9 +23,37 @@ function AppContent() {
   useScrollReveal();
 
   // Auto-open the scholarship offer shortly after the app loads (entry popup).
-  useEffect(() => {
-    const timer = setTimeout(() => openScholarship(), 10000);
-    return () => clearTimeout(timer);
+  // useEffect(() => {
+  //   const timer = setTimeout(() => openScholarship(), 10000);
+  //   return () => clearTimeout(timer);
+  // }, [openScholarship]);
+
+   useEffect(() => {
+    const POPUP_EXPIRY_DAYS = 2;
+    const STORAGE_KEY = "scholarshipSubmittedAt";
+
+    const submittedAt = localStorage.getItem(STORAGE_KEY);
+
+    // Never submitted -> show popup after 10 seconds
+    if (!submittedAt) {
+      const timer = setTimeout(() => openScholarship(), 10000);
+      return () => clearTimeout(timer);
+    }
+
+    // Check whether 30 days have passed
+    const expiryTime =
+      Number(submittedAt) +
+      POPUP_EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+
+    if (Date.now() >= expiryTime) {
+      // Expired -> remove old value and show popup again
+      localStorage.removeItem(STORAGE_KEY);
+
+      const timer = setTimeout(() => openScholarship(), 10000);
+      return () => clearTimeout(timer);
+    }
+
+    // Within 30 days -> don't show popup
   }, [openScholarship]);
 
   return (

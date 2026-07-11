@@ -4,10 +4,11 @@ import { ArrowRightIcon, PhoneIcon, ClockIcon } from "../icons/Icons";
 import "./ScholarshipPopup.css";
 import { supabase } from "../../lib/supabase";
 import { useNavigate } from "react-router-dom";
+import { usePopup } from "../../context/PopupContext";
 
 const START_SECONDS = 10 * 60 - 10; // 09:50
 const BASE_URL = import.meta.env.VITE_BASE_URL;
-
+const POPUP_EXPIRY_DAYS = 1;
 function format(sec) {
   const m = String(Math.floor(sec / 60)).padStart(2, "0");
   const s = String(sec % 60).padStart(2, "0");
@@ -16,6 +17,7 @@ function format(sec) {
 
 function ScholarshipPopup({ onClose }) {
   const navigate = useNavigate();
+  const { closeScholarship } = usePopup();
   const [remaining, setRemaining] = useState(START_SECONDS);
   const [mobile, setMobile] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -62,8 +64,10 @@ function ScholarshipPopup({ onClose }) {
       return;
     }
 
-    
+    //LocalStorage
+    localStorage.setItem("scholarshipSubmittedAt", Date.now().toString());
     setSubmitted(true);
+    closeScholarship();
     navigate(`${BASE_URL}/demo-success`);
   }
 
