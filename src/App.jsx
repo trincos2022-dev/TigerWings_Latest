@@ -14,6 +14,9 @@ import AdmissionsBanner from './components/AdmissionsBanner/AdmissionsBanner';
 import Footer from './components/Footer/Footer';
 import WhatsAppFloat from './components/WhatsAppFloat/WhatsAppFloat';
 import ScholarshipPopup from './components/ScholarshipPopup/ScholarshipPopup';
+import { Route, Routes } from 'react-router-dom';
+import DemoSuccess from "./pages/DemoPage/DemoSuccess";
+import ScholarshipSuccess from "./pages/ScholarshipPage/ScholarshipSuccess";
 
 function AppContent() {
   const { scholarshipOpen, openScholarship, closeScholarship } = usePopup();
@@ -48,8 +51,12 @@ function AppContent() {
 
 function App() {
   return (
-    <PopupProvider>
-      <AppContent />
+     <PopupProvider>
+      <Routes>
+        <Route path={`${import.meta.env.VITE_BASE_URL}`} element={<AppContent />} />
+        <Route  path={`${import.meta.env.VITE_BASE_URL}demo-success`} element={<DemoSuccess />} />
+         <Route  path={`${import.meta.env.VITE_BASE_URL}scholarship-success`} element={<ScholarshipSuccess/>} />
+      </Routes>
     </PopupProvider>
   );
 }

@@ -3,15 +3,19 @@ import { UserIcon, PhoneIcon, MailIcon, ArrowRightIcon } from "../icons/Icons";
 import "./DemoForm.css";
 import { supabase } from "../../lib/supabase";
 import { usePopup } from "../../context/PopupContext";
+import { useNavigate } from "react-router-dom";
 
 const initialState = { name: "", mobile: "+91", email: "" };
 
 function DemoForm() {
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+
   const [values, setValues] = useState(initialState);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const nameInputRef = useRef(null);
   const { applyNowSignal } = usePopup();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (applyNowSignal === 0) return;
@@ -33,7 +37,9 @@ function DemoForm() {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase.from("demo_training_enquiries").insert([values]);
+    const { error } = await supabase
+      .from("demo_training_enquiries")
+      .insert([values]);
 
     setLoading(false);
 
@@ -43,6 +49,7 @@ function DemoForm() {
     }
 
     setSubmitted(true);
+    navigate(`${BASE_URL}/demo-success`);
   }
 
   return (
@@ -52,82 +59,76 @@ function DemoForm() {
         Experience our aviation training before you enroll.
       </p>
 
-      {submitted ? (
-        <div className="demo-form__success">
-          Thank you! Our admissions team will contact you shortly.
+      <form className="demo-form__fields" onSubmit={handleSubmit}>
+        <div className="demo-form__field">
+          <span className="demo-form__icon">
+            <UserIcon size={18} color="#62748e" />
+          </span>
+          <input
+            className="demo-form__input"
+            type="text"
+            name="name"
+            placeholder="Full Name"
+            autoComplete="name"
+            value={values.name}
+            onChange={handleChange}
+            ref={nameInputRef}
+            required
+          />
         </div>
-      ) : (
-        <form className="demo-form__fields" onSubmit={handleSubmit}>
-          <div className="demo-form__field">
-            <span className="demo-form__icon">
-              <UserIcon size={18} color="#62748e" />
-            </span>
-            <input
-              className="demo-form__input"
-              type="text"
-              name="name"
-              placeholder="Full Name"
-              autoComplete="name"
-              value={values.name}
-              onChange={handleChange}
-              ref={nameInputRef}
-              required
-            />
-          </div>
-          <div className="demo-form__field">
-            <span className="demo-form__icon">
-              <PhoneIcon size={18} color="#62748e" />
-            </span>
-            <input
-              className="demo-form__input"
-              type="tel"
-              name="mobile"
-              placeholder="Mobile Number"
-              autoComplete="tel"
-              value={values.mobile}
-              onChange={handleChange}
-              pattern="^\+91[0-9]{10}$"
-              maxLength={13}
-              required
-              onInvalid={(e) =>
-                e.target.setCustomValidity(
-                  "Please enter a valid mobile number start with +91",
-                )
-              }
-              onInput={(e) => e.target.setCustomValidity("")}
-            />
-          </div>
-          <div className="demo-form__field">
-            <span className="demo-form__icon">
-              <MailIcon size={18} color="#62748e" />
-            </span>
-            <input
-              className="demo-form__input"
-              type="email"
-              name="email"
-              placeholder="Email ID"
-              autoComplete="email"
-              value={values.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
-          <button
-            type="submit"
-            className="btn btn-primary demo-form__submit"
-            disabled={loading}
-          >
-            {loading ? (
-              "Submitting..."
-            ) : (
-              <>
-                Submit Enquiry
-                <ArrowRightIcon size={16} color="#0a2a66" />
-              </>
-            )}
-          </button>
-        </form>
-      )}
+        <div className="demo-form__field">
+          <span className="demo-form__icon">
+            <PhoneIcon size={18} color="#62748e" />
+          </span>
+          <input
+            className="demo-form__input"
+            type="tel"
+            name="mobile"
+            placeholder="Mobile Number"
+            autoComplete="tel"
+            value={values.mobile}
+            onChange={handleChange}
+            pattern="^\+91[0-9]{10}$"
+            maxLength={13}
+            required
+            onInvalid={(e) =>
+              e.target.setCustomValidity(
+                "Please enter a valid mobile number start with +91",
+              )
+            }
+            onInput={(e) => e.target.setCustomValidity("")}
+          />
+        </div>
+        <div className="demo-form__field">
+          <span className="demo-form__icon">
+            <MailIcon size={18} color="#62748e" />
+          </span>
+          <input
+            className="demo-form__input"
+            type="email"
+            name="email"
+            placeholder="Email ID"
+            autoComplete="email"
+            value={values.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <button
+          type="submit"
+          className="btn btn-primary demo-form__submit"
+          disabled={loading}
+        >
+          {loading ? (
+            "Submitting..."
+          ) : (
+            <>
+              Submit Enquiry
+              <ArrowRightIcon size={16} color="#0a2a66" />
+            </>
+          )}
+        </button>
+      </form>
 
       <p className="demo-form__disclaimer">
         By submitting, you agree to our Terms &amp; Privacy Policy

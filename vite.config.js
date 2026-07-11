@@ -1,7 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import { loadEnv } from 'vite'
 
-export default defineConfig({
-   base: '/best-aviation-training-in-chennai/',
-  plugins: [react()],
+export default defineConfig(({ mode }) => {
+  const env = loadEnv(mode, process.cwd(), '')
+  return {
+    base: env.VITE_BASE_URL,
+    plugins: [react()],
+  }
 })
