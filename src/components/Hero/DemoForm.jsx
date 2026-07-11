@@ -33,7 +33,7 @@ function DemoForm() {
     e.preventDefault();
     setLoading(true);
 
-    const { error } = await supabase.from("demo_training_enquiries").insert([values]);
+    const { error } = await supabase.from("demo_enquiries").insert([values]);
 
     setLoading(false);
 

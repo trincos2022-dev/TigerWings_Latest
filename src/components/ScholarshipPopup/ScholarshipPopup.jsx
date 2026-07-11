@@ -43,7 +43,7 @@ function ScholarshipPopup({ onClose }) {
 
     setLoading(true);
 
-    const { error } = await supabase.from("scholarship_training_enquiries").insert([
+    const { error } = await supabase.from("scholarship_enquiries").insert([
       {
         mobile: `+91${mobile}`,
       },
