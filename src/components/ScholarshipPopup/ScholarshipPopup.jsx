@@ -65,8 +65,10 @@ function ScholarshipPopup({ onClose }) {
     }
 
     //LocalStorage
-    localStorage.setItem("scholarshipSubmittedAt", Date.now().toString());
-    setSubmitted(true);
+localStorage.setItem(
+  `scholarshipSubmittedAt_${window.location.pathname}`,
+  Date.now().toString()
+);    setSubmitted(true);
     closeScholarship();
     navigate(`${BASE_URL}/demo-success`);
   }
