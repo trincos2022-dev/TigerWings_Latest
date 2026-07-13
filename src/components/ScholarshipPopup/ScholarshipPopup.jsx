@@ -50,7 +50,7 @@ function ScholarshipPopup({ onClose }) {
     setLoading(true);
 
     const { error } = await supabase
-      .from("scholarship_training_enquiries")
+      .from("scholarship_enquiries")
       .insert([
         {
           mobile: `+91${mobile}`,
@@ -70,7 +70,7 @@ localStorage.setItem(
   Date.now().toString()
 );    setSubmitted(true);
     closeScholarship();
-    navigate(`${BASE_URL}/demo-success`);
+    navigate(`${BASE_URL}/scholarship-success`);
   }
 
   return createPortal(
