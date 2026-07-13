@@ -49,7 +49,7 @@ function DemoForm() {
     }
 
     setSubmitted(true);
-    navigate(`${BASE_URL}/demo-success`);
+    navigate(`${BASE_URL}/thank-you-page`);
   }
 
   return (

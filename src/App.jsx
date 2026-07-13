@@ -120,11 +120,11 @@ function App() {
           element={<AppContent />}
         />
         <Route
-          path={`${import.meta.env.VITE_BASE_URL}demo-success`}
+          path={`${import.meta.env.VITE_BASE_URL}thank-you-page`}
           element={<DemoSuccess />}
         />
         <Route
-          path={`${import.meta.env.VITE_BASE_URL}scholarship-success`}
+          path={`${import.meta.env.VITE_BASE_URL}Scholarship-thank-you`}
           element={<ScholarshipSuccess />}
         />
       </Routes>
