@@ -1,11 +1,11 @@
-import faq_1 from "../assets/figma/web/faq/faq-1.png"
-import faq_2 from "../assets/figma/web/faq/faq-2.jpg"
-import faq_3 from "../assets/figma/web/faq/faq-3.png"
-import faq_4 from "../assets/figma/web/faq/faq-4.jpg"
-import faq_5 from "../assets/figma/web/faq/faq-5.png"
+import faq_1 from "../assets/figma/web/courses/img133391.webp"
+import faq_2 from "../assets/figma/web/faq/faq-2.webp"
+import faq_3 from "../assets/figma/web/courses/img-image-with-fallback4.webp"
+import faq_4 from "../assets/figma/web/faq/faq-4.webp"
+import faq_5 from "../assets/figma/web/courses/img-frame249.webp"
 
 export const NAV = {
-  phone: '9003480888',
+  phone: '7418314050',
 };
 
 export const HERO = {
@@ -266,6 +266,6 @@ export const FAQS = [
 
 export const FOOTER = {
   email: 'contact@tigerwings.com',
-  phone: '9003480888',
+  phone: '7418314050',
   address: '4th Floor, Sai Pride, A24, 3rd Phase, SIDCO Industrial Estate, Guindy, Chennai, TN',
 };

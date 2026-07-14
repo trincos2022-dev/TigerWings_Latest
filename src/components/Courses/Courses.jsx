@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { COURSES } from '../../data/content';
 import { CapBadgeIcon, WalletIcon, ClockIcon, ArrowRightIcon } from '../icons/Icons';
 import CourseModal from './CourseModal';
-import imgCabinCrew from '../../assets/figma/web/courses/img-image-with-fallback2.png';
-import imgGroundStaff from '../../assets/figma/web/courses/img-image-with-fallback1.jpg';
-import imgFlightDispatch from '../../assets/figma/web/courses/img-image-with-fallback3.jpg';
-import imgPilotTraining from '../../assets/figma/web/courses/img-image-with-fallback4.png';
-import imgRtrTraining from '../../assets/figma/web/courses/img-image-with-fallback5.jpg';
+import imgCabinCrew from '../../assets/figma/web/courses/img-image-with-fallback2.webp';
+import imgGroundStaff from '../../assets/figma/web/courses/img-image-with-fallback1.webp';
+import imgFlightDispatch from '../../assets/figma/web/courses/img-image-with-fallback3.webp';
+import imgPilotTraining from '../../assets/figma/web/courses/img-image-with-fallback4.webp';
+import imgRtrTraining from '../../assets/figma/web/courses/img-image-with-fallback5.webp';
 import './Courses.css';
 
 const COURSE_IMAGES = {
@@ -58,7 +58,7 @@ function Courses() {
                   </div>
                 </dl>
 
-                {/* <div className="course-card__actions">
+                <div className="course-card__actions">
                   <button
                     type="button"
                     className="btn btn-navy btn-sm course-card__cta"
@@ -66,7 +66,7 @@ function Courses() {
                   >
                     View Details <ArrowRightIcon size={14} color="#fff" />
                   </button>
-                </div> */}
+                </div>
               </div>
             </article>
           ))}

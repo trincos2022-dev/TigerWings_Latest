@@ -24,7 +24,8 @@ function Navbar() {
     <header className="navbar">
       <div className="container navbar__inner">
         <a
-          href="https://tigerswings.com"
+          // href="https://tigerswings.com"
+          href="/"
           className="navbar__logo"
           aria-label="Tigers Wings Aviation Academy"
         >

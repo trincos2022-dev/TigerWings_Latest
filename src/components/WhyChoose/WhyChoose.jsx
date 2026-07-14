@@ -1,10 +1,10 @@
 import { WHY_CHOOSE_FEATURES } from "../../data/content";
 import { MaximizeIcon } from "../icons/Icons";
 import { usePopup } from "../../context/PopupContext";
-import imgBuilding from "../../assets/figma/web/why-choose/img-rectangle101.png";
-import imgReception from "../../assets/figma/web/why-choose/img-frame248.jpg";
-import imgStudyGroup from "../../assets/figma/web/why-choose/img-frame249.png";
-import imgClassroom from "../../assets/figma/web/why-choose/img-frame250.png";
+import imgBuilding from "../../assets/figma/web/courses/img-rectangle101.webp";
+import imgReception from "../../assets/figma/web/courses/img-frame248.webp";
+import imgStudyGroup from "../../assets/figma/web/courses/img-frame249.webp";
+import imgClassroom from "../../assets/figma/web/courses/img-frame250.webp";
 import imgReview from "../../assets/figma/web/why-choose/img-whats-app-image20260630-at75657-pm1.jpg";
 import iconAirplane from "../../assets/figma/web/why-choose/airplane.png";
 import "./WhyChoose.css";

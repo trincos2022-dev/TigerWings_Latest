@@ -3,9 +3,12 @@ import { createPortal } from "react-dom";
 import { ArrowRightIcon, PhoneIcon, ClockIcon } from "../icons/Icons";
 import "./ScholarshipPopup.css";
 import { supabase } from "../../lib/supabase";
+import { useNavigate } from "react-router-dom";
+import { usePopup } from "../../context/PopupContext";
 
 const START_SECONDS = 10 * 60 - 10; // 09:50
-
+const BASE_URL = import.meta.env.VITE_BASE_URL;
+const POPUP_EXPIRY_DAYS = 1;
 function format(sec) {
   const m = String(Math.floor(sec / 60)).padStart(2, "0");
   const s = String(sec % 60).padStart(2, "0");
@@ -13,6 +16,8 @@ function format(sec) {
 }
 
 function ScholarshipPopup({ onClose }) {
+  const navigate = useNavigate();
+  const { closeScholarship } = usePopup();
   const [remaining, setRemaining] = useState(START_SECONDS);
   const [mobile, setMobile] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -27,6 +32,7 @@ function ScholarshipPopup({ onClose }) {
   }, []);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     function onKey(e) {
       if (e.key === "Escape") onClose();
     }
@@ -43,11 +49,13 @@ function ScholarshipPopup({ onClose }) {
 
     setLoading(true);
 
-    const { error } = await supabase.from("scholarship_training_enquiries").insert([
-      {
-        mobile: `+91${mobile}`,
-      },
-    ]);
+    const { error } = await supabase
+      .from("scholarship_training_enquiries")
+      .insert([
+        {
+          mobile: `+91${mobile}`,
+        },
+      ]);
 
     setLoading(false);
 
@@ -56,7 +64,13 @@ function ScholarshipPopup({ onClose }) {
       return;
     }
 
-    setSubmitted(true);
+    //LocalStorage
+localStorage.setItem(
+  `scholarshipSubmittedAt_${window.location.pathname}`,
+  Date.now().toString()
+);    setSubmitted(true);
+    closeScholarship();
+    navigate(`${BASE_URL}/scholarship-success`);
   }
 
   return createPortal(
@@ -103,54 +117,45 @@ function ScholarshipPopup({ onClose }) {
         </div>
 
         <div className="scholarship__body">
-          {submitted ? (
-            <div className="scholarship__success">
-              🎉 Thank you! Our counsellor will call you within 15 minutes to
-              confirm your scholarship.
+          <form onSubmit={handleSubmit}>
+            <label className="scholarship__label" htmlFor="scholarship-mobile">
+              Mobile Number
+            </label>
+            <div className="scholarship__field">
+              <span className="scholarship__prefix">
+                <PhoneIcon size={16} color="#62748e" /> +91
+              </span>
+              <input
+                id="scholarship-mobile"
+                className="scholarship__input"
+                type="tel"
+                inputMode="numeric"
+                placeholder="Enter 10-digit mobile number"
+                autoComplete="tel"
+                value={mobile}
+                onChange={(e) =>
+                  setMobile(e.target.value.replace(/\D/g, "").slice(0, 10))
+                }
+                required
+                pattern="[0-9]{10}"
+              />
             </div>
-          ) : (
-            <form onSubmit={handleSubmit}>
-              <label
-                className="scholarship__label"
-                htmlFor="scholarship-mobile"
-              >
-                Mobile Number
-              </label>
-              <div className="scholarship__field">
-                <span className="scholarship__prefix">
-                  <PhoneIcon size={16} color="#62748e" /> +91
-                </span>
-                <input
-                  id="scholarship-mobile"
-                  className="scholarship__input"
-                  type="tel"
-                  inputMode="numeric"
-                  placeholder="Enter 10-digit mobile number"
-                  autoComplete="tel"
-                  value={mobile}
-                  onChange={(e) =>
-                    setMobile(e.target.value.replace(/\D/g, "").slice(0, 10))
-                  }
-                  required
-                  pattern="[0-9]{10}"
-                />
-              </div>
-              <button
-                type="submit"
-                className="btn btn-primary scholarship__submit"
-                disabled={loading}
-              >
-                {loading ? (
-                  "Submitting..."
-                ) : (
-                  <>
-                    Claim Scholarship
-                    <ArrowRightIcon size={16} color="#0a2a66" />
-                  </>
-                )}
-              </button>
-            </form>
-          )}
+            <button
+              type="submit"
+              className="btn btn-primary scholarship__submit"
+              disabled={loading}
+            >
+              {loading ? (
+                "Submitting..."
+              ) : (
+                <>
+                  Claim Scholarship
+                  <ArrowRightIcon size={16} color="#0a2a66" />
+                </>
+              )}
+            </button>
+          </form>
+
           <p className="scholarship__note">
             🔒 100% safe. No spam. We&rsquo;ll call you within 15 minutes.
           </p>

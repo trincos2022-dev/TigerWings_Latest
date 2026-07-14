@@ -123,7 +123,7 @@ function CourseModal({ course, image, onClose }) {
             Apply Now <ArrowRightIcon size={16} color="#0a2a66" />
           </button>
           <a
-            href="https://wa.me/919003480888"
+            href="https://wa.me/917418314050"
             target="_blank"
             rel="noreferrer"
             className="btn btn-whatsapp"
