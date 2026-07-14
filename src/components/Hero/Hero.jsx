@@ -1,5 +1,5 @@
-import womanCutout from "../../assets/figma/web/hero/img-aadhira-v21.png";
-import manCutout from "../../assets/figma/web/hero/img-arayan21.png";
+import womanCutout from "../../assets/figma/web/courses/img-aadhira-v21.webp";
+import manCutout from "../../assets/figma/web/courses/img-arayan21.webp";
 import { CheckIcon, WhatsAppIcon, PhoneIcon } from "../icons/Icons";
 import { HERO, NAV } from "../../data/content";
 import DemoForm from "./DemoForm";
@@ -41,7 +41,7 @@ function Hero() {
 
             <div className="hero__ctas">
               <a
-                href="https://wa.me/919003480888"
+                href="https://wa.me/917418314050"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-whatsapp hero__whatsapp"

@@ -2,7 +2,7 @@ import { TESTIMONIALS } from "../../data/content";
 import { StarIcon, PlayIcon, QuoteIcon } from "../icons/Icons";
 import avatarJayasree from "../../assets/figma/web/testimonials/img-image-with-fallback.png";
 import avatarVithuzan from "../../assets/figma/web/testimonials/img-image-with-fallback2.png";
-import videoThumb from "../../assets/figma/web/testimonials/img-video-card.png";
+import videoThumb from "../../assets/figma/web/courses/img-arayan21.webp";
 import logoIndigo from "../../assets/figma/web/testimonials/img-indigo-ns-big-bfe5-efa91.png";
 import logoAirIndia from "../../assets/figma/web/testimonials/img-air-india2023-svg1.png";
 import logoQatar from "../../assets/figma/web/testimonials/img-qatar-airways-logo-svg1.png";

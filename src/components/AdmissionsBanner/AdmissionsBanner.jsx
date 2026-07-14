@@ -1,4 +1,4 @@
-import bgImage from "../../assets/figma/web/admissions-banner/img-frame2147223316.png";
+import bgImage from "../../assets/figma/web/admissions-banner/img-frame2147223316.webp";
 import { WhatsAppIcon } from "../icons/Icons";
 import { usePopup } from "../../context/PopupContext";
 import "./AdmissionsBanner.css";
@@ -30,7 +30,7 @@ function AdmissionsBanner() {
             Apply Now
           </button>
           <a
-            href="https://wa.me/919003480888"
+            href="https://wa.me/917418314050"
             target="_blank"
             rel="noreferrer"
             className="btn btn-whatsapp"
